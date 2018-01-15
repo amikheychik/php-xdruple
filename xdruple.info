@@ -1,0 +1,4 @@
+name = xDruple
+description = Object-Oriented, Code-Driven Drupal 7 framework
+core = 7.x
+package = xTuple

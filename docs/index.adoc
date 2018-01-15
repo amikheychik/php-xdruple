@@ -1,0 +1,6 @@
+= xDruple - Object-Oriented, Code-Driven Drupal 7 framework by xTuple
+:toc: left
+:toclevels: 3
+:icons: font
+:source-highlighter: coderay
+:source-language: php
