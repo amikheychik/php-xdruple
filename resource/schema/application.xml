@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<application xmlns="https://xdruple.xtuple.com/schema/application"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://xdruple.xtuple.com/schema/application application.xsd">
+  <load>
+    <application class="\Xtuple\Xdruple\Application\Application"/>
+    <configuration class="\Xtuple\Xdruple\Application\Configuration\Application\ApplicationXMLElement"/>
+    <environment class="\Xtuple\Xdruple\Application\Configuration\Environment\EnvironmentXMLElement"/>
+  </load>
+</application>

@@ -1,1 +1,26 @@
 <?php declare(strict_types=1);
+
+use Xtuple\Xdruple\Application\Application;
+use Xtuple\Xdruple\Application\Loader\DrupalApplicationLoader;
+
+/** @noinspection PhpIncludeInspection */
+require_once DRUPAL_ROOT . '/vendor/autoload.php';
+/** @noinspection PhpIncludeInspection */
+require_once DRUPAL_ROOT . '/includes/locale.inc';
+
+/** Include xdruple_boot() to automatically start application on hook_boot() */
+include_once __DIR__ . '/components/system/lifecycle.inc';
+
+/**
+ * Application singleton.
+ *
+ * @return Application
+ * @throws Exception
+ */
+function xdruple_application(): Application {
+  static $application;
+  if (is_null($application)) {
+    $application = (new DrupalApplicationLoader(conf_path()))->application();
+  }
+  return $application;
+}

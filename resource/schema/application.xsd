@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema targetNamespace="https://xdruple.xtuple.com/schema/application"
+           xmlns="https://xdruple.xtuple.com/schema/application"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+  <xs:complexType name="class">
+    <xs:attribute name="class" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:simpleType name="environment">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="development"/>
+      <xs:enumeration value="stage"/>
+      <xs:enumeration value="production"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="load">
+    <xs:sequence>
+      <xs:element name="application" type="class"
+                  default="\Xtuple\Xdruple\Application\Application"/>
+      <xs:element name="configuration" type="class"
+                  default="\Xtuple\Xdruple\Application\Configuration\Application\ApplicationXMLElement"/>
+      <xs:element name="environment" type="class"
+                  default="\Xtuple\Xdruple\Application\Configuration\Environment\EnvironmentXMLElement"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="application">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="load" type="load"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,1 +1,4 @@
 <?php declare(strict_types=1);
+
+include_once __DIR__ . '/components/system/install.inc';
+include_once __DIR__ . '/components/system/update.inc';

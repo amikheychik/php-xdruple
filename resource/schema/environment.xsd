@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema targetNamespace="https://xdruple.xtuple.com/schema/environment"
+           xmlns="https://xdruple.xtuple.com/schema/environment"
+           xmlns:application="https://xdruple.xtuple.com/schema/application"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="https://xdruple.xtuple.com/schema/application application.xsd"
+           elementFormDefault="qualified">
+  <xs:complexType name="environment">
+    <xs:choice>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:element name="environment">
+    <xs:complexType>
+      <xs:complexContent>
+        <xs:extension base="environment">
+          <xs:attribute type="application:environment" name="type" use="required"/>
+        </xs:extension>
+      </xs:complexContent>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
