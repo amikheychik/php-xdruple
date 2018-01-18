@@ -29,6 +29,7 @@
   "require": {
     "php": "^7.1",
     "drupal/drupal": "^7.56",
+    "drupal/views": "^3.18",
     "xtuple/util": "dev-master",
     "xtuple/api": "dev-master",
     "xtuple/api-commerce": "dev-master"
