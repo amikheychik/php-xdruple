@@ -1,15 +1,13 @@
 <?php declare(strict_types=1);
 
 use Xtuple\Xdruple\Application\Application;
+use Xtuple\Xdruple\Application\Component\Component\System\Lifecycle\LifecycleComponent;
 use Xtuple\Xdruple\Application\Loader\DrupalApplicationLoader;
 
 /** @noinspection PhpIncludeInspection */
 require_once DRUPAL_ROOT . '/vendor/autoload.php';
 /** @noinspection PhpIncludeInspection */
 require_once DRUPAL_ROOT . '/includes/locale.inc';
-
-/** Include xdruple_boot() to automatically start application on hook_boot() */
-include_once __DIR__ . '/components/system/lifecycle.inc';
 
 /**
  * Application singleton.
@@ -23,4 +21,39 @@ function xdruple_application(): Application {
     $application = (new DrupalApplicationLoader(conf_path()))->application();
   }
   return $application;
+}
+
+/**
+ * Implements hook_boot().
+ */
+function xdruple_boot() {
+  if ($component = _xdruple_application_lifecycle_component()) {
+    $component->boot();
+  }
+}
+
+/**
+ * Implements hook_init().
+ */
+function xdruple_init() {
+  if ($component = _xdruple_application_lifecycle_component()) {
+    $component->init();
+  }
+}
+
+/**
+ * Implements hook_exit().
+ *
+ * @param string $destination
+ */
+function xdruple_exit($destination = null) {
+  if ($component = _xdruple_application_lifecycle_component()) {
+    $component->exit($destination);
+  }
+}
+
+function _xdruple_application_lifecycle_component(): ?LifecycleComponent {
+  /** @var LifecycleComponent|null $component */
+  $component = xdruple_application()->component(LifecycleComponent::NAME);
+  return $component;
 }
