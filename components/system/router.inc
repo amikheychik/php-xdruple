@@ -155,7 +155,7 @@ function xdruple_menu_theme($path, ...$args) {
 /**
  * Implements hook_menu() 'delivery callback'.
  *
- * @param array|string $data
+ * @param array|int $data
  */
 function xdruple_menu_delivery($data) {
   _xdruple_application_router_component()->menuDelivery($data);

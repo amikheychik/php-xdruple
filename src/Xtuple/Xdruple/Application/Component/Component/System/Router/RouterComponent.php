@@ -79,7 +79,7 @@ interface RouterComponent
   /**
    * @see hook_menu() - 'delivery callback'
    *
-   * @param array|string $data
+   * @param array|int $data
    */
   public function menuDelivery($data);
 
