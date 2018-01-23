@@ -112,7 +112,7 @@ function xdruple_menu_load($id, $path, $map, $index, $loaders, ...$args) {
  *
  * @return bool
  */
-function xdruple_menu_access_callback($path, ...$args) {
+function xdruple_menu_access($path, ...$args) {
   return _xdruple_application_router_component()->menuAccess($path, $args);
 }
 
@@ -124,7 +124,7 @@ function xdruple_menu_access_callback($path, ...$args) {
  *
  * @return string
  */
-function xdruple_menu_title_callback($path, ...$args) {
+function xdruple_menu_title($path, ...$args) {
   return _xdruple_application_router_component()->menuTitle($path, $args);
 }
 
@@ -136,7 +136,7 @@ function xdruple_menu_title_callback($path, ...$args) {
  *
  * @return array|int
  */
-function xdruple_menu_page_callback($path, ...$args) {
+function xdruple_menu_page($path, ...$args) {
   return _xdruple_application_router_component()->menuPage($path, $args);
 }
 
@@ -148,7 +148,7 @@ function xdruple_menu_page_callback($path, ...$args) {
  *
  * @return string
  */
-function xdruple_menu_theme_callback($path, ...$args) {
+function xdruple_menu_theme($path, ...$args) {
   return _xdruple_application_router_component()->menuTheme($path, $args);
 }
 
@@ -157,7 +157,7 @@ function xdruple_menu_theme_callback($path, ...$args) {
  *
  * @param array|string $data
  */
-function xdruple_menu_delivery_callback($data) {
+function xdruple_menu_delivery($data) {
   _xdruple_application_router_component()->menuDelivery($data);
 }
 
