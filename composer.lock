@@ -300,12 +300,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtuple/php-api.git",
-                "reference": "f2221eefa17b12d3bc2560992fa874fdab4823a7"
+                "reference": "950fb572cdcac661c265806862405f98153ca3fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtuple/php-api/zipball/f2221eefa17b12d3bc2560992fa874fdab4823a7",
-                "reference": "f2221eefa17b12d3bc2560992fa874fdab4823a7",
+                "url": "https://api.github.com/repos/xtuple/php-api/zipball/950fb572cdcac661c265806862405f98153ca3fb",
+                "reference": "950fb572cdcac661c265806862405f98153ca3fb",
                 "shasum": ""
             },
             "require": {
@@ -334,7 +334,7 @@
             ],
             "description": "xTuple REST API PHP client",
             "homepage": "https://github.com/xtuple/php-api",
-            "time": "2018-01-16T22:38:32+00:00"
+            "time": "2018-01-25T00:25:56+00:00"
         },
         {
             "name": "xtuple/api-commerce",
@@ -342,12 +342,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtuple/php-api-commerce.git",
-                "reference": "eb7fceb2ab724d35a71ee8e09fd21230d386c7e6"
+                "reference": "9efde579c0cb4058421b537f5b322b027f4b3205"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtuple/php-api-commerce/zipball/eb7fceb2ab724d35a71ee8e09fd21230d386c7e6",
-                "reference": "eb7fceb2ab724d35a71ee8e09fd21230d386c7e6",
+                "url": "https://api.github.com/repos/xtuple/php-api-commerce/zipball/9efde579c0cb4058421b537f5b322b027f4b3205",
+                "reference": "9efde579c0cb4058421b537f5b322b027f4b3205",
                 "shasum": ""
             },
             "require": {
@@ -377,7 +377,7 @@
             ],
             "description": "xTuple Commerce API client",
             "homepage": "https://github.com/xtuple/php-api-commerce",
-            "time": "2018-01-16T22:49:27+00:00"
+            "time": "2018-01-25T00:28:25+00:00"
         },
         {
             "name": "xtuple/util",
@@ -385,12 +385,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtuple/php-util.git",
-                "reference": "993d20205858a85b8024ef968aa6682d116c7260"
+                "reference": "e9eb4acf8421adb2889a52ae2649930f9fd8b3c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtuple/php-util/zipball/993d20205858a85b8024ef968aa6682d116c7260",
-                "reference": "993d20205858a85b8024ef968aa6682d116c7260",
+                "url": "https://api.github.com/repos/xtuple/php-util/zipball/e9eb4acf8421adb2889a52ae2649930f9fd8b3c5",
+                "reference": "e9eb4acf8421adb2889a52ae2649930f9fd8b3c5",
                 "shasum": ""
             },
             "require": {
@@ -418,7 +418,7 @@
             ],
             "description": "xTuple PHP utility classes",
             "homepage": "https://github.com/xtuple/php-util",
-            "time": "2018-01-20T21:23:14+00:00"
+            "time": "2018-01-25T00:24:08+00:00"
         }
     ],
     "packages-dev": [
