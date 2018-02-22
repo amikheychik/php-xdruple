@@ -28,7 +28,7 @@
   "minimum-stability": "alpha",
   "require": {
     "php": "^7.1",
-    "drupal/drupal": "^7.56",
+    "drupal/drupal": "^7.57",
     "drupal/views": "^3.18",
     "xtuple/util": "dev-master",
     "xtuple/api": "dev-master",
