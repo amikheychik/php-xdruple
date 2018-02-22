@@ -2,7 +2,7 @@
 
 namespace Xtuple\Xdruple\Application\Configuration\Environment;
 
-use Xtuple\Util\XML\Element\Type\ArrayXMLElement;
+use Xtuple\Util\XML\Element\Type\Dictionary\ArrayXMLElement;
 use Xtuple\Util\XML\Element\XMLElement;
 use Xtuple\Xdruple\Application\Configuration\Variable\Drupal\DatabasesConfiguration;
 
@@ -11,11 +11,11 @@ final class EnvironmentXMLElement
   public function __construct(XMLElement $environment, DatabasesConfiguration $databases) {
     $configuration = [];
     foreach ($environment->children('/environment/configuration/variable') as $variable) {
-      $configuration[$variable->attribute('name')->value()] = (new ArrayXMLElement($variable))->value();
+      $configuration[$variable->attributes()->get('name')->value()] = (new ArrayXMLElement($variable))->value();
     }
     parent::__construct(new EnvironmentArray([
         'databases' => $databases->value(),
-        'environment' => $environment->children('/environment')->get(0)->attribute('type')->value(),
+        'environment' => $environment->children('/environment')->get(0)->attributes()->get('type')->value(),
       ] + $configuration));
   }
 }

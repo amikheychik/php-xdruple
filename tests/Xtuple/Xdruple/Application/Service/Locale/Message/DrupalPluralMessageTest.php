@@ -15,7 +15,7 @@ class DrupalPluralMessageTest
     ], new ArraySetArgument([
       new StringArgument('type', 'test'),
       new StringArgument('%item', 'item'),
-      new StringArgument('%items', 'items')
+      new StringArgument('%items', 'items'),
     ]), 1));
     // Drupal-style parameters are not recognized to format
     self::assertEquals('@count test %items', $message->__toString());

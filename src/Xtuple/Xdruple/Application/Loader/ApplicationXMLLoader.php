@@ -22,9 +22,9 @@ final class ApplicationXMLLoader
   }
 
   public function application(): Application {
-    $applicationClass = $this->application->children('/application/load/application')->get(0)->attribute('class')->value();
-    $configurationClass = $this->application->children('/application/load/configuration')->get(0)->attribute('class')->value();
-    $environmentClass = $this->application->children('/application/load/environment')->get(0)->attribute('class')->value();
+    $applicationClass = $this->application->children('/application/load/application')->get(0)->attributes()->get('class')->value();
+    $configurationClass = $this->application->children('/application/load/configuration')->get(0)->attributes()->get('class')->value();
+    $environmentClass = $this->application->children('/application/load/environment')->get(0)->attributes()->get('class')->value();
     return new $applicationClass(
       new $configurationClass(
         $this->application
