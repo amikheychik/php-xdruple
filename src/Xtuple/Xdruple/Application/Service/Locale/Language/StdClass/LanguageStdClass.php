@@ -8,6 +8,11 @@ use Xtuple\Xdruple\Application\Service\Locale\Language\LanguageStruct;
 
 final class LanguageStdClass
   extends AbstractLanguage {
+  /**
+   * @throws \Throwable
+   *
+   * @param \stdClass $language
+   */
   public function __construct(\stdClass $language) {
     parent::__construct(new LanguageStruct(
       $language->language,

@@ -10,10 +10,12 @@ final class LanguageDirection
   public const RTL = 1;
 
   public static function LTR(): LanguageDirection {
+    /** @noinspection PhpUnhandledExceptionInspection */
     return new self(self::LTR);
   }
 
   public static function RTL(): LanguageDirection {
+    /** @noinspection PhpUnhandledExceptionInspection */
     return new self(self::RTL);
   }
 
