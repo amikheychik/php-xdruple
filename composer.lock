@@ -8,17 +8,17 @@
     "packages": [
         {
             "name": "drupal/ctools",
-            "version": "1.13.0",
+            "version": "1.14.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/ctools",
-                "reference": "7.x-1.13"
+                "reference": "7.x-1.14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ctools-7.x-1.13.zip",
-                "reference": "7.x-1.13",
-                "shasum": "226d1037bc377cdebf412a1f88277c7f0b0acb91"
+                "url": "https://ftp.drupal.org/files/projects/ctools-7.x-1.14.zip",
+                "reference": "7.x-1.14",
+                "shasum": "866b4a5eb5f6085e80aff155ec7a2cd476eea117"
             },
             "require": {
                 "drupal/drupal": "~7.0"
@@ -27,7 +27,6 @@
                 "drupal/advanced_help": "*",
                 "drupal/page_manager": "*",
                 "drupal/panels": "*",
-                "drupal/uuid": "*",
                 "drupal/views": "*"
             },
             "type": "drupal-module",
@@ -36,8 +35,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "7.x-1.13",
-                    "datestamp": "1517704084",
+                    "version": "7.x-1.14",
+                    "datestamp": "1519455784",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -390,17 +389,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtuple/php-util.git",
-                "reference": "2e9d0b4b78f75164e1719699733a46fdd96bf981"
+                "reference": "7e7a0d286ebb2040670d6c57bb0dc1b84e144066"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtuple/php-util/zipball/2e9d0b4b78f75164e1719699733a46fdd96bf981",
-                "reference": "2e9d0b4b78f75164e1719699733a46fdd96bf981",
+                "url": "https://api.github.com/repos/xtuple/php-util/zipball/7e7a0d286ebb2040670d6c57bb0dc1b84e144066",
+                "reference": "7e7a0d286ebb2040670d6c57bb0dc1b84e144066",
                 "shasum": ""
             },
             "require": {
                 "ext-intl": "*",
                 "ext-simplexml": "*",
+                "lib-openssl": "*",
                 "php": "^7.1"
             },
             "require-dev": {
@@ -425,7 +425,7 @@
             ],
             "description": "xTuple PHP utility classes",
             "homepage": "https://github.com/xtuple/php-util",
-            "time": "2018-02-22T22:33:41+00:00"
+            "time": "2018-02-28T12:56:32+00:00"
         }
     ],
     "packages-dev": [
@@ -1096,16 +1096,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.0.1",
+            "version": "7.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "316555dbd0ed4097bbdd17c65ab416bf27a472e9"
+                "reference": "e2f8aa21bc54b6ba218bdd4f9e0dac1e9bc3b4e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/316555dbd0ed4097bbdd17c65ab416bf27a472e9",
-                "reference": "316555dbd0ed4097bbdd17c65ab416bf27a472e9",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e2f8aa21bc54b6ba218bdd4f9e0dac1e9bc3b4e9",
+                "reference": "e2f8aa21bc54b6ba218bdd4f9e0dac1e9bc3b4e9",
                 "shasum": ""
             },
             "require": {
@@ -1172,7 +1172,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-02-13T06:08:08+00:00"
+            "time": "2018-02-26T07:03:12+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
