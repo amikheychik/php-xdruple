@@ -9,7 +9,7 @@ use Xtuple\Xdruple\Application\Service\Locale\Drupal\DrupalLocaleTestFunctions;
  */
 final class TestLocale
   extends AbstractLocale {
-  public function __construct(string $locale, array $translations = []) {
+  public function __construct(string $locale = 'en_US', array $translations = []) {
     parent::__construct(new DrupalLocaleTestFunctions($translations), $locale);
   }
 }
