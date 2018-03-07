@@ -18,11 +18,11 @@ final class DrupalSession
 
   public function __construct(Locale $locale, DrupalMessageFunctions $drupal) {
     $this->locale = $locale;
-    $this->session = [];
-    if (isset($_SESSION)) {
+    if (!isset($_SESSION)) {
       // Check is required as $_SESSION doesn't exist for Anonymous user
-      $this->session = &$_SESSION;
+      $_SESSION = [];
     }
+    $this->session = &$_SESSION;
     parent::__construct($this->session);
     $this->notifications = new DrupalListNotification($this->locale, $drupal);
   }
