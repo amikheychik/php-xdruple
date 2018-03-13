@@ -10,10 +10,10 @@ class SessionTest
   extends TestCase {
   public function testSession() {
     $this->assertions(new TestSession());
-    $GLOBALS['_SESSION'] = ['messages' => []];
+    $messages = [];
     $this->assertions(new DrupalSession(
       new TestLocale('en_US'),
-      new DrupalMessageTestFunctions($GLOBALS['_SESSION']['messages'])
+      new DrupalMessageTestFunctions($messages)
     ));
   }
 
