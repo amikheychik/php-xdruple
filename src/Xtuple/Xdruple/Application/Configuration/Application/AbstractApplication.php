@@ -2,12 +2,12 @@
 
 namespace Xtuple\Xdruple\Application\Configuration\Application;
 
-abstract class AbstractApplication
-  implements Application {
-  /** @var Application */
-  private $application;
+use Xtuple\Xdruple\Application\Configuration\AbstractConfiguration;
 
+abstract class AbstractApplication
+  extends AbstractConfiguration
+  implements Application {
   public function __construct(Application $application) {
-    $this->application = $application;
+    parent::__construct($application);
   }
 }

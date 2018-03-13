@@ -3,13 +3,15 @@
 namespace Xtuple\Xdruple\Application\Configuration\Application;
 
 use Xtuple\Util\XML\Element\XMLElement;
+use Xtuple\Xdruple\Application\Configuration\ConfigurationXMLElement;
 
 final class ApplicationXMLElement
-  implements Application {
-  /** @var XMLElement */
-  private $application;
-
+  extends AbstractApplication {
   public function __construct(XMLElement $application) {
-    $this->application = $application;
+    parent::__construct(new ApplicationStruct(
+      ($configuration = $application->children('/application/configuration')->get(0))
+        ? (new ConfigurationXMLElement($configuration))->value()
+        : []
+    ));
   }
 }

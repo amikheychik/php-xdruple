@@ -2,20 +2,26 @@
 
 namespace Xtuple\Xdruple\Application\Configuration\Environment;
 
-use Xtuple\Util\XML\Element\Type\Dictionary\ArrayXMLElement;
 use Xtuple\Util\XML\Element\XMLElement;
-use Xtuple\Xdruple\Application\Configuration\Variable\Drupal\DatabasesConfiguration;
+use Xtuple\Xdruple\Application\Configuration\ConfigurationXMLElement;
+use Xtuple\Xdruple\Application\Configuration\Environment\Databases\Databases;
+use Xtuple\Xdruple\Application\Configuration\Environment\Type\EnvironmentType;
 
 final class EnvironmentXMLElement
   extends AbstractEnvironment {
-  public function __construct(XMLElement $environment, DatabasesConfiguration $databases) {
-    $configuration = [];
-    foreach ($environment->children('/environment/configuration/variable') as $variable) {
-      $configuration[$variable->attributes()->get('name')->value()] = (new ArrayXMLElement($variable))->value();
-    }
-    parent::__construct(new EnvironmentArray([
-        'databases' => $databases->value(),
-        'environment' => $environment->children('/environment')->get(0)->attributes()->get('type')->value(),
-      ] + $configuration));
+  /**
+   * @throws \Throwable
+   *
+   * @param XMLElement $environment
+   * @param Databases  $databases
+   */
+  public function __construct(XMLElement $environment, Databases $databases) {
+    parent::__construct(new EnvironmentStruct(
+      new EnvironmentType($environment->attributes()->get('type')->value()),
+      $databases,
+      ($configuration = $environment->children('/environment/configuration')->get(0))
+        ? (new ConfigurationXMLElement($configuration))->value()
+        : []
+    ));
   }
 }

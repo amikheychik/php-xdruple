@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Xtuple\Xdruple\Application\Configuration\Variable;
+namespace Xtuple\Xdruple\Application\Service\Configuration\Value;
 
-interface Variable {
+interface Value {
   /**
    * @return mixed
    */

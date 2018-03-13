@@ -2,5 +2,9 @@
 
 namespace Xtuple\Xdruple\Application\Configuration\Application;
 
-interface Application {
+use Xtuple\Xdruple\Application\Configuration\Configuration;
+
+interface Application
+  extends Configuration {
+  public function value(): array;
 }

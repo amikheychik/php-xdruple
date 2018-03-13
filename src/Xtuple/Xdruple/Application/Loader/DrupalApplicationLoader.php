@@ -5,7 +5,7 @@ namespace Xtuple\Xdruple\Application\Loader;
 use Xtuple\Util\File\Path\PathString;
 use Xtuple\Util\XML\Element\XMLElementString;
 use Xtuple\Xdruple\Application\Application;
-use Xtuple\Xdruple\Application\Configuration\Variable\Drupal\DatabasesConfiguration;
+use Xtuple\Xdruple\Application\Configuration\Environment\Databases\DatabasesGlobals;
 
 final class DrupalApplicationLoader
   implements ApplicationLoader {
@@ -18,7 +18,7 @@ final class DrupalApplicationLoader
       (new PathString("{$configurationPath}/application/environment.xml"))->isFile()
         ? new XMLElementString(file_get_contents("{$configurationPath}/application/environment.xml"))
         : new XMLElementString('<environment type="production"></environment>'),
-      new DatabasesConfiguration()
+      new DatabasesGlobals()
     );
   }
 

@@ -4,7 +4,7 @@ namespace Xtuple\Xdruple\Application\Loader;
 
 use Xtuple\Util\XML\Element\XMLElement;
 use Xtuple\Xdruple\Application\Application;
-use Xtuple\Xdruple\Application\Configuration\Variable\Drupal\DatabasesConfiguration;
+use Xtuple\Xdruple\Application\Configuration\Environment\Databases\Databases;
 
 final class ApplicationXMLLoader
   implements ApplicationLoader {
@@ -15,7 +15,7 @@ final class ApplicationXMLLoader
   /** @var array */
   private $databases;
 
-  public function __construct(XMLElement $application, XMLElement $environment, DatabasesConfiguration $databases) {
+  public function __construct(XMLElement $application, XMLElement $environment, Databases $databases) {
     $this->application = $application;
     $this->environment = $environment;
     $this->databases = $databases;
