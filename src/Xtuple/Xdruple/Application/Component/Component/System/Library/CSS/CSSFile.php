@@ -7,12 +7,31 @@ use Xtuple\Xdruple\Application\Component\Component\System\Library\CSS\Group\CSSG
 use Xtuple\Xdruple\Application\Service\Finder\Package\Package;
 
 final class CSSFile
-  extends AbstractCSS {
+  implements CSS {
+  /** @var Package */
+  private $package;
+  /** @var string */
+  private $filename;
+  /** @var null|CSSGroup */
+  private $group;
+  /** @var array */
+  private $options;
+
   public function __construct(Package $package, string $filename, ?CSSGroup $group = null, array $options = []) {
-    $group = $group ?: new CSSGroupDefault();
-    parent::__construct(new CSSStruct("{$package->path()}/{$filename}", [
+    $this->package = $package;
+    $this->filename = $filename;
+    $this->group = $group ?: new CSSGroupDefault();
+    $this->options = $options;
+  }
+
+  public function data() {
+    return "{$this->package->path()}/{$this->filename}";
+  }
+
+  public function options(): ?array {
+    return [
         'type' => 'file',
-        'group' => $group->weight(),
-      ] + $options));
+        'group' => $this->group->weight(),
+      ] + $this->options;
   }
 }

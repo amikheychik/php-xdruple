@@ -9,21 +9,21 @@ use Xtuple\Xdruple\Application\Service\Finder\Package\PackageStruct;
 class CSSTest
   extends TestCase {
   public function testStruct() {
-    $css = new CSSStruct();
+    $css = new TestCSS(new CSSStruct());
     self::assertNull($css->data());
     self::assertNull($css->options());
-    $css = new CSSStruct('test.css', [
+    $css = new TestCSS(new CSSStruct('test.css', [
       'group' => 0,
-    ]);
+    ]));
     self::assertEquals('test.css', $css->data());
     self::assertEquals([
       'group' => 0,
     ], $css->options());
-    $css = new CSSStruct([
+    $css = new TestCSS(new CSSStruct([
       'xdruple' => [],
     ], [
       'type' => 'setting',
-    ]);
+    ]));
     self::assertEquals([
       'xdruple' => [],
     ], $css->data());
@@ -48,5 +48,12 @@ class CSSTest
       'group' => -100,
       'preprocess' => true,
     ], $css->options());
+  }
+}
+
+final class TestCSS
+  extends AbstractCSS {
+  public function __construct(CSS $css) {
+    parent::__construct($css);
   }
 }
