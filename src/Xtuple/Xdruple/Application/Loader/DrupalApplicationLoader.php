@@ -2,6 +2,7 @@
 
 namespace Xtuple\Xdruple\Application\Loader;
 
+use Xtuple\Util\Exception\Exception;
 use Xtuple\Util\File\Path\PathString;
 use Xtuple\Util\XML\Element\XMLElementString;
 use Xtuple\Xdruple\Application\Application;
@@ -12,6 +13,11 @@ final class DrupalApplicationLoader
   /** @var ApplicationXMLLoader */
   private $loader;
 
+  /**
+   * @throws Exception
+   *
+   * @param string $configurationPath
+   */
   public function __construct(string $configurationPath) {
     $this->loader = new ApplicationXMLLoader(
       new XMLElementString(file_get_contents("{$configurationPath}/application/application.xml")),
