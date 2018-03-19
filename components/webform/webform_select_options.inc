@@ -36,7 +36,8 @@ function xdruple_webform_select_options($component, $flat, $arguments) {
 }
 
 function _xdruple_application_webform_select_options_component(): WebformSelectOptionsComponent {
-  /** @var WebformSelectOptionsComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(WebformSelectOptionsComponent::NAME);
+  /** @var WebformSelectOptionsComponent $component */
   return $component;
 }

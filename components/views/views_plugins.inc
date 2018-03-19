@@ -27,7 +27,8 @@ function xdruple_views_plugins_alter(&$plugins) {
 }
 
 function _xdruple_application_views_plugins_component(): ViewsPluginsComponent {
-  /** @var ViewsPluginsComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(ViewsPluginsComponent::NAME);
+  /** @var ViewsPluginsComponent $component */
   return $component;
 }

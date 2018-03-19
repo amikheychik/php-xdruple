@@ -19,7 +19,8 @@ function xdruple_requirements($phase) {
 }
 
 function _xdruple_application_requirements_component(): RequirementsComponent {
-  /** @var RequirementsComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(RequirementsComponent::NAME);
+  /** @var RequirementsComponent $component */
   return $component;
 }

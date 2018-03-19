@@ -34,7 +34,8 @@ function xdruple_webform_results_download_submission_information_data($token, $s
 }
 
 function _xdruple_application_webform_results_download_component(): WebformResultsDownloadComponent {
-  /** @var WebformResultsDownloadComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(WebformResultsDownloadComponent::NAME);
+  /** @var WebformResultsDownloadComponent $component */
   return $component;
 }

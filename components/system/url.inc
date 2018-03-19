@@ -25,7 +25,8 @@ function xdruple_url_outbound_alter(&$path, &$options, $original_path) {
 }
 
 function _xdruple_application_url_component(): URLComponent {
-  /** @var URLComponent $url */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $url = xdruple_application()->component(URLComponent::NAME);
+  /** @var URLComponent $url */
   return $url;
 }

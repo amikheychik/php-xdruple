@@ -10,7 +10,8 @@ function xdruple_multiple_field_remove_button_field_widgets_alter(&$widgets) {
 }
 
 function _xdruple_application_multiple_field_remove_button_component(): MultipleFieldsRemoveButtonComponent {
-  /** @var MultipleFieldsRemoveButtonComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(MultipleFieldsRemoveButtonComponent::NAME);
+  /** @var MultipleFieldsRemoveButtonComponent $component */
   return $component;
 }

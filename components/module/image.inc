@@ -72,7 +72,8 @@ function xdruple_image_style_flush($style) {
 }
 
 function _xdruple_application_image_component(): ImageComponent {
-  /** @var ImageComponent $image */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $image = xdruple_application()->component(ImageComponent::NAME);
+  /** @var ImageComponent $image */
   return $image;
 }

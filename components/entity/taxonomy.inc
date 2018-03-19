@@ -126,7 +126,8 @@ function xdruple_taxonomy_vocabulary_delete($vocabulary) {
 }
 
 function _xdruple_application_taxonomy_component(): TaxonomyComponent {
-  /** @var TaxonomyComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(TaxonomyComponent::NAME);
+  /** @var TaxonomyComponent $component */
   return $component;
 }

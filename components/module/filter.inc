@@ -114,7 +114,8 @@ function xdruple_filter_tips($filter, $format, $long) {
 }
 
 function _xdruple_application_filter_component(): FilterComponent {
-  /** @var FilterComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(FilterComponent::NAME);
+  /** @var FilterComponent $component */
   return $component;
 }

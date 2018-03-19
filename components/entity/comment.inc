@@ -90,7 +90,8 @@ function xdruple_comment_view_alter(&$build) {
 }
 
 function _xdruple_application_comment_component(): CommentComponent {
-  /** @var CommentComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(CommentComponent::NAME);
+  /** @var CommentComponent $component */
   return $component;
 }

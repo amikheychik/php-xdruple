@@ -40,7 +40,8 @@ function xdruple_field_views_data_alter(&$result, $field, $module) {
 }
 
 function _xdruple_application_field_views_component(): FieldViewsComponent {
-  /** @var FieldViewsComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(FieldViewsComponent::NAME);
+  /** @var FieldViewsComponent $component */
   return $component;
 }

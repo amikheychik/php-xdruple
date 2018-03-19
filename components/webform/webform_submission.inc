@@ -100,7 +100,8 @@ function xdruple_webform_submission_render_alter(&$submission) {
 }
 
 function _xdruple_application_webform_submission_component(): WebformSubmissionComponent {
-  /** @var WebformSubmissionComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(WebformSubmissionComponent::NAME);
+  /** @var WebformSubmissionComponent $component */
   return $component;
 }

@@ -23,7 +23,8 @@ function xdruple_entity_info_alter(&$entity_info) {
 }
 
 function _xdruple_application_entity_component(): EntityComponent {
-  /** @var EntityComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(EntityComponent::NAME);
+  /** @var EntityComponent $component */
   return $component;
 }

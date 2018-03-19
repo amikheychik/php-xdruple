@@ -108,8 +108,9 @@ function xdruple_webform_component_delete($component) {
 }
 
 function _xdruple_application_webform_component_component(): WebformComponentComponent {
-  /** @var WebformComponentComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(WebformComponentComponent::NAME);
+  /** @var WebformComponentComponent $component */
   return $component;
 }
 

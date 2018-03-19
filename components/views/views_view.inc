@@ -169,7 +169,8 @@ function xdruple_views_view_delete($view) {
 }
 
 function _xdruple_application_views_component(): ViewsViewComponent {
-  /** @var ViewsViewComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(ViewsViewComponent::NAME);
+  /** @var ViewsViewComponent $component */
   return $component;
 }

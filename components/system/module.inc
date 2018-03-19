@@ -53,7 +53,8 @@ function xdruple_modules_uninstalled($modules) {
 }
 
 function _xdruple_application_module_component(): ModuleComponent {
-  /** @var ModuleComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(ModuleComponent::NAME);
+  /** @var ModuleComponent $component */
   return $component;
 }

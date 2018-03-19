@@ -78,7 +78,8 @@ function theme_xdruple($variables) {
 }
 
 function _xdruple_application_theme_component(): ThemeComponent {
-  /** @var ThemeComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(ThemeComponent::NAME);
+  /** @var ThemeComponent $component */
   return $component;
 }

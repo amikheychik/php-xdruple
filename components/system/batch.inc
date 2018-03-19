@@ -37,7 +37,8 @@ function xdruple_batch_finished($success, $results, $operations) {
 }
 
 function _xdruple_application_batch_component(): BatchComponent {
-  /** @var BatchComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(BatchComponent::NAME);
+  /** @var BatchComponent $component */
   return $component;
 }

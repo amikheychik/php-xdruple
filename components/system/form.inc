@@ -125,7 +125,8 @@ function xdruple_form_ajax_callback($form, $form_state) {
 }
 
 function _xdruple_application_form_component(): FormComponent {
-  /** @var FormComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(FormComponent::NAME);
+  /** @var FormComponent $component */
   return $component;
 }

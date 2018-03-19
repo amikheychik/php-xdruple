@@ -22,7 +22,8 @@ function xdruple_library_alter(&$libraries, $module) {
 }
 
 function _xdruple_application_library_component(): LibraryComponent {
-  /** @var LibraryComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(LibraryComponent::NAME);
+  /** @var LibraryComponent $component */
   return $component;
 }

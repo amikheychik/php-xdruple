@@ -88,7 +88,8 @@ function xdruple_field_formatter_settings_form($field, $instance, $view_mode, $f
 }
 
 function _xdruple_application_field_formatter_component(): FieldFormatterComponent {
-  /** @var FieldFormatterComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(FieldFormatterComponent::NAME);
+  /** @var FieldFormatterComponent $component */
   return $component;
 }

@@ -45,7 +45,8 @@ function xdruple_views_ui_display_top_links_alter(&$links, $view, $display_id) {
 }
 
 function _xdruple_application_views_ui_component(): ViewsUIComponent {
-  /** @var ViewsUIComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(ViewsUIComponent::NAME);
+  /** @var ViewsUIComponent $component */
   return $component;
 }

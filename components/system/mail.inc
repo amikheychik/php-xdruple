@@ -28,7 +28,8 @@ function xdruple_mail_alter(&$message) {
 }
 
 function _xdruple_application_mail_component(): MailComponent {
-  /** @var MailComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(MailComponent::NAME);
+  /** @var MailComponent $component */
   return $component;
 }

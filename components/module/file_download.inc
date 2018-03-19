@@ -28,7 +28,8 @@ function xdruple_file_download_access_alter(&$grants, $file_item, $entity_type, 
 }
 
 function _xdruple_application_file_download_component(): FileDownloadComponent {
-  /** @var FileDownloadComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(FileDownloadComponent::NAME);
+  /** @var FileDownloadComponent $component */
   return $component;
 }

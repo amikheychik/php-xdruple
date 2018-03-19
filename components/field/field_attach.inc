@@ -205,7 +205,8 @@ function xdruple_field_extra_fields_display_alter(&$displays, $context) {
 }
 
 function _xdruple_application_field_attach_component(): FieldAttachComponent {
-  /** @var FieldAttachComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(FieldAttachComponent::NAME);
+  /** @var FieldAttachComponent $component */
   return $component;
 }

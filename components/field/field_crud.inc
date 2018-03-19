@@ -109,7 +109,8 @@ function xdruple_field_delete_instance($instance) {
 }
 
 function _xdruple_application_field_crud_component(): FieldCRUDComponent {
-  /** @var FieldCRUDComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(FieldCRUDComponent::NAME);
+  /** @var FieldCRUDComponent $component */
   return $component;
 }

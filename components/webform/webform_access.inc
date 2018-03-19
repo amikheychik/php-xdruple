@@ -53,7 +53,8 @@ function xdruple_webform_update_access($node, $account) {
 }
 
 function _xdruple_application_webform_access_component(): WebformAccessComponent {
-  /** @var WebformAccessComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(WebformAccessComponent::NAME);
+  /** @var WebformAccessComponent $component */
   return $component;
 }

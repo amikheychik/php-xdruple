@@ -86,7 +86,8 @@ function xdruple_field_widget_settings_form($field, $instance) {
 }
 
 function _xdruple_application_field_widget_component(): FieldWidgetComponent {
-  /** @var FieldWidgetComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(FieldWidgetComponent::NAME);
+  /** @var FieldWidgetComponent $component */
   return $component;
 }

@@ -12,7 +12,8 @@ function xdruple_countries_alter(&$countries) {
 }
 
 function _xdruple_application_countries_component(): CountriesComponent {
-  /** @var CountriesComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(CountriesComponent::NAME);
+  /** @var CountriesComponent $component */
   return $component;
 }

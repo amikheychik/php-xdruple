@@ -50,7 +50,8 @@ function xdruple_tokens_alter(array &$replacements, array $context) {
 }
 
 function _xdruple_application_token_component(): TokenComponent {
-  /** @var TokenComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(TokenComponent::NAME);
+  /** @var TokenComponent $component */
   return $component;
 }

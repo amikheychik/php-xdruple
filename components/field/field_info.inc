@@ -16,7 +16,8 @@ function xdruple_field_info_max_weight($entity_type, $bundle, $context) {
 }
 
 function _xdruple_application_field_info_component(): FieldInfoComponent {
-  /** @var FieldInfoComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(FieldInfoComponent::NAME);
+  /** @var FieldInfoComponent $component */
   return $component;
 }

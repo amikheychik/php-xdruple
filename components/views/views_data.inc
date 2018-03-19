@@ -28,7 +28,8 @@ function xdruple_views_data_alter(&$data) {
 }
 
 function _xdruple_application_views_data_component(): ViewsDataComponent {
-  /** @var ViewsDataComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(ViewsDataComponent::NAME);
+  /** @var ViewsDataComponent $component */
   return $component;
 }

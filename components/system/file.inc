@@ -108,7 +108,8 @@ function xdruple_file_validate($file) {
 }
 
 function _xdruple_application_file_component(): FileComponent {
-  /** @var FileComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(FileComponent::NAME);
+  /** @var FileComponent $component */
   return $component;
 }

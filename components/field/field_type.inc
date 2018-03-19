@@ -229,7 +229,8 @@ function xdruple_field_display_alter(&$display, $context) {
 }
 
 function _xdruple_application_field_type_component(): FieldTypeComponent {
-  /** @var FieldTypeComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(FieldTypeComponent::NAME);
+  /** @var FieldTypeComponent $component */
   return $component;
 }

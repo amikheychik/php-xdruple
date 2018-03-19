@@ -39,7 +39,8 @@ function xdruple_user_role_delete($role) {
 }
 
 function _xdruple_application_user_role_component(): UserRoleComponent {
-  /** @var UserRoleComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(UserRoleComponent::NAME);
+  /** @var UserRoleComponent $component */
   return $component;
 }

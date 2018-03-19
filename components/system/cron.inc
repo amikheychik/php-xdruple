@@ -44,7 +44,8 @@ function xdruple_queue_worker($queue_item) {
 }
 
 function _xdruple_application_cron_component(): CronComponent {
-  /** @var CronComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(CronComponent::NAME);
+  /** @var CronComponent $component */
   return $component;
 }

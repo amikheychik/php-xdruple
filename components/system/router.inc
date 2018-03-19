@@ -162,7 +162,8 @@ function xdruple_menu_delivery($data) {
 }
 
 function _xdruple_application_router_component(): RouterComponent {
-  /** @var RouterComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(RouterComponent::NAME);
+  /** @var RouterComponent $component */
   return $component;
 }

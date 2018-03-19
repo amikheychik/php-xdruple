@@ -203,7 +203,8 @@ function xdruple_field_storage_query($query) {
 }
 
 function _xdruple_application_field_storage_component(): FieldStorageComponent {
-  /** @var FieldStorageComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(FieldStorageComponent::NAME);
+  /** @var FieldStorageComponent $component */
   return $component;
 }

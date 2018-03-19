@@ -41,7 +41,8 @@ function xdruple_webform_html_capable_mail_systems_alter(&$systems) {
 }
 
 function _xdruple_application_webform_webform_component(): WebformComponent {
-  /** @var WebformComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(WebformComponent::NAME);
+  /** @var WebformComponent $component */
   return $component;
 }

@@ -340,7 +340,8 @@ function xdruple_node_uri($node) {
 }
 
 function _xdruple_application_node_component(): NodeComponent {
-  /** @var NodeComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(NodeComponent::NAME);
+  /** @var NodeComponent $component */
   return $component;
 }

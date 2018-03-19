@@ -21,7 +21,8 @@ function xdruple_multilingual_settings_changed() {
 }
 
 function _xdruple_application_locale_component(): LocaleComponent {
-  /** @var LocaleComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(LocaleComponent::NAME);
+  /** @var LocaleComponent $component */
   return $component;
 }

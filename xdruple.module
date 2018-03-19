@@ -1,5 +1,6 @@
 <?php declare(strict_types=1);
 
+use Xtuple\Util\Exception\Exception;
 use Xtuple\Xdruple\Application\Application;
 use Xtuple\Xdruple\Application\Component\Component\System\Lifecycle\LifecycleComponent;
 use Xtuple\Xdruple\Application\Loader\DrupalApplicationLoader;
@@ -53,7 +54,8 @@ function xdruple_exit($destination = null) {
 }
 
 function _xdruple_application_lifecycle_component(): ?LifecycleComponent {
-  /** @var LifecycleComponent|null $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(LifecycleComponent::NAME);
+  /** @var LifecycleComponent|null $component */
   return $component;
 }

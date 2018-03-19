@@ -102,7 +102,8 @@ function xdruple_update_index() {
 }
 
 function _xdruple_application_search_component(): SearchComponent {
-  /** @var SearchComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(SearchComponent::NAME);
+  /** @var SearchComponent $component */
   return $component;
 }

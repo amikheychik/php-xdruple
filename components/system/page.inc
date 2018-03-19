@@ -61,7 +61,8 @@ function xdruple_page_alter(&$page) {
 }
 
 function _xdruple_application_page_component(): PageComponent {
-  /** @var PageComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(PageComponent::NAME);
+  /** @var PageComponent $component */
   return $component;
 }

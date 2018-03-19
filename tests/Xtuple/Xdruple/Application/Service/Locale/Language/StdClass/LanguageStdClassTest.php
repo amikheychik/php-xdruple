@@ -9,6 +9,7 @@ use Xtuple\Xdruple\Application\Service\Locale\Language\LanguageStruct;
 class LanguageStdClassTest
   extends TestCase {
   public function testLanguage() {
+    /** @noinspection PhpUnhandledExceptionInspection */
     $language = new LanguageStdClass((object) [
       'language' => 'en',
       'name' => 'English',

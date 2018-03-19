@@ -24,7 +24,8 @@ function xdruple_webform_csv_data_alter(&$data, $component, $submission) {
 }
 
 function _xdruple_application_webform_csv_component(): WebformCSVComponent {
-  /** @var WebformCSVComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(WebformCSVComponent::NAME);
+  /** @var WebformCSVComponent $component */
   return $component;
 }

@@ -22,6 +22,7 @@ class LanguageDirectionTest
     self::assertTrue($direction->is(1));
     self::assertFalse($direction->isLTR());
     self::assertTrue($direction->isRTL());
+    /** @noinspection PhpUnhandledExceptionInspection */
     new LanguageDirection(2);
   }
 }

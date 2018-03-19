@@ -44,7 +44,8 @@ function xdruple_date_format_types_alter(&$types) {
 }
 
 function _xdruple_application_date_component(): DateComponent {
-  /** @var DateComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(DateComponent::NAME);
+  /** @var DateComponent $component */
   return $component;
 }

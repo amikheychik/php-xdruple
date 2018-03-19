@@ -37,7 +37,8 @@ function xdruple_registry_files_alter(&$files, $modules) {
 }
 
 function _xdruple_application_system_component(): SystemComponent {
-  /** @var SystemComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(SystemComponent::NAME);
+  /** @var SystemComponent $component */
   return $component;
 }

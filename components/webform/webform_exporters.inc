@@ -21,7 +21,8 @@ function xdruple_webform_exporters_alter(&$exporters) {
 }
 
 function _xdruple_application_webform_exporters_component(): WebformExportersComponent {
-  /** @var WebformExportersComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(WebformExportersComponent::NAME);
+  /** @var WebformExportersComponent $component */
   return $component;
 }

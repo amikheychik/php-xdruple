@@ -43,7 +43,8 @@ function xdruple_menu_link_alter(&$item) {
 }
 
 function _xdruple_application_menu_link_component(): MenuLinkComponent {
-  /** @var MenuLinkComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(MenuLinkComponent::NAME);
+  /** @var MenuLinkComponent $component */
   return $component;
 }

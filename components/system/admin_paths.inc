@@ -21,7 +21,8 @@ function xdruple_admin_paths_alter(&$paths) {
 }
 
 function _xdruple_application_admin_paths_component(): AdminPathsComponent {
-  /** @var AdminPathsComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(AdminPathsComponent::NAME);
+  /** @var AdminPathsComponent $component */
   return $component;
 }

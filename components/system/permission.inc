@@ -17,7 +17,8 @@ function xdruple_permission() {
 }
 
 function _xdruple_application_permission_component(): PermissionComponent {
-  /** @var PermissionComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(PermissionComponent::NAME);
+  /** @var PermissionComponent $component */
   return $component;
 }

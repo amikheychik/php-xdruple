@@ -34,7 +34,8 @@ function xdruple_menu_delete($menu) {
 }
 
 function _xdruple_application_menu_component(): MenuComponent {
-  /** @var MenuComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(MenuComponent::NAME);
+  /** @var MenuComponent $component */
   return $component;
 }

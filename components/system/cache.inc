@@ -12,7 +12,8 @@ function xdruple_flush_caches() {
 }
 
 function _xdruple_application_cache_component(): CacheComponent {
-  /** @var CacheComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(CacheComponent::NAME);
+  /** @var CacheComponent $component */
   return $component;
 }

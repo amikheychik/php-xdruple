@@ -108,7 +108,8 @@ function xdruple_form_element_ajax($form, $form_state) {
 }
 
 function _xdruple_application_element_component(): ElementComponent {
-  /** @var ElementComponent $component */
+  /** @noinspection PhpUnhandledExceptionInspection */
   $component = xdruple_application()->component(ElementComponent::NAME);
+  /** @var ElementComponent $component */
   return $component;
 }
