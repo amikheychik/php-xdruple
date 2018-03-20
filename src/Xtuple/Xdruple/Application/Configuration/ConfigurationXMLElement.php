@@ -13,9 +13,12 @@ final class ConfigurationXMLElement
     /** @var XMLElement $variable */
     foreach ($element->children("/{$element->name()}/variable") as $variable) {
       $name = $variable->attributes()->get('name')->value();
-      $value = new OptionalXMLValueXMLElement($variable);
-      if ($value->isPresent()) {
-        $configuration[$name] = $value->value();
+      if (($type = $variable->attributes()->get('type'))
+        && $type->value() === 'xml') {
+        $value = new OptionalXMLValueXMLElement($variable);
+        if ($value->isPresent()) {
+          $configuration[$name] = $value->value();
+        }
       }
       else {
         $value = (new ArrayXMLElement($variable))->value();

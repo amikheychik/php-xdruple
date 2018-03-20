@@ -30,7 +30,7 @@ class ConfigurationTest
       '</variable>',
       '<variable name="timezone">America/New_York</variable>',
       '<variable name="locale">en_US</variable>',
-      '<variable name="product"><Page><Element name="teaser" access="false"/></Page></variable>',
+      '<variable name="product" type="xml"><Page><Element name="teaser" access="false"/></Page></variable>',
       '<variable name="credit_card">',
       '<type>visa</type><number>4111-1111-1111-1111</number><month>12</month><year>20</year><code>900</code>',
       '</variable>',
