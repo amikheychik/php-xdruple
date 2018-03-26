@@ -389,12 +389,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtuple/php-util.git",
-                "reference": "ddb7cc3437765d6cd8eaf37e7460f9d3a9548af7"
+                "reference": "e606bf0083d3074b5b79b50d7cd566f1cbdc0046"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtuple/php-util/zipball/ddb7cc3437765d6cd8eaf37e7460f9d3a9548af7",
-                "reference": "ddb7cc3437765d6cd8eaf37e7460f9d3a9548af7",
+                "url": "https://api.github.com/repos/xtuple/php-util/zipball/e606bf0083d3074b5b79b50d7cd566f1cbdc0046",
+                "reference": "e606bf0083d3074b5b79b50d7cd566f1cbdc0046",
                 "shasum": ""
             },
             "require": {
@@ -425,7 +425,7 @@
             ],
             "description": "xTuple PHP utility classes",
             "homepage": "https://github.com/xtuple/php-util",
-            "time": "2018-03-13T13:40:20+00:00"
+            "time": "2018-03-26T12:12:00+00:00"
         }
     ],
     "packages-dev": [
