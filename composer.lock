@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fcfd751f3080db251839b361aece9669",
+    "content-hash": "ddcbaabe208abe80b27ffdfd45a78e04",
     "packages": [
         {
             "name": "drupal/ctools",
@@ -101,17 +101,17 @@
         },
         {
             "name": "drupal/drupal",
-            "version": "7.57.0",
+            "version": "7.58.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/drupal",
-                "reference": "7.57"
+                "reference": "7.58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/drupal-7.57.zip",
-                "reference": "7.57",
-                "shasum": "f2a7071074bd19896ef9ac2ed6fa82eebc32e28d"
+                "url": "https://ftp.drupal.org/files/projects/drupal-7.58.zip",
+                "reference": "7.58",
+                "shasum": "4fc6d540f529bb98dc2b811e1c1193de858a5d79"
             },
             "type": "drupal-core",
             "extra": {
@@ -119,8 +119,8 @@
                     "dev-7.x": "7.x-dev"
                 },
                 "drupal": {
-                    "version": "7.57",
-                    "datestamp": "1519237410",
+                    "version": "7.58",
+                    "datestamp": "1522264797",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -183,6 +183,10 @@
                 {
                     "name": "lauriii",
                     "homepage": "https://www.drupal.org/user/1078742"
+                },
+                {
+                    "name": "mlhess",
+                    "homepage": "https://www.drupal.org/user/102818"
                 },
                 {
                     "name": "plach",
