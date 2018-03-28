@@ -4,28 +4,25 @@ namespace Xtuple\Xdruple\Application\Component\Component\System\Library\CSS;
 
 use Xtuple\Xdruple\Application\Component\Component\System\Library\CSS\Group\CSSGroup;
 use Xtuple\Xdruple\Application\Component\Component\System\Library\CSS\Group\CSSGroupDefault;
-use Xtuple\Xdruple\Application\Service\Finder\Package\Package;
+use Xtuple\Xdruple\Application\Service\Finder\Path\Path;
 
 final class CSSFile
   implements CSS {
-  /** @var Package */
-  private $package;
-  /** @var string */
-  private $filename;
+  /** @var Path */
+  private $path;
   /** @var null|CSSGroup */
   private $group;
   /** @var array */
   private $options;
 
-  public function __construct(Package $package, string $filename, ?CSSGroup $group = null, array $options = []) {
-    $this->package = $package;
-    $this->filename = $filename;
+  public function __construct(Path $path, ?CSSGroup $group = null, array $options = []) {
+    $this->path = $path;
     $this->group = $group ?: new CSSGroupDefault();
     $this->options = $options;
   }
 
   public function data() {
-    return "{$this->package->path()}/{$this->filename}";
+    return $this->path->relative();
   }
 
   public function options(): ?array {

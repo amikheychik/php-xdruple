@@ -4,7 +4,7 @@ namespace Xtuple\Xdruple\Application\Component\Component\System\Library\CSS;
 
 use PHPUnit\Framework\TestCase;
 use Xtuple\Xdruple\Application\Component\Component\System\Library\CSS\Group\CSSGroupSystem;
-use Xtuple\Xdruple\Application\Service\Finder\Package\PackageStruct;
+use Xtuple\Xdruple\Application\Service\Finder\Path\PathStruct;
 
 class CSSTest
   extends TestCase {
@@ -33,13 +33,13 @@ class CSSTest
   }
 
   public function testFile() {
-    $css = new CSSFile(new PackageStruct('library', 'path/to/library'), 'css/test.css');
+    $css = new CSSFile(new PathStruct('path/to/library/css/test.css', 'path/to/library/css/test.css'));
     self::assertEquals('path/to/library/css/test.css', $css->data());
     self::assertEquals([
       'type' => 'file',
       'group' => 0,
     ], $css->options());
-    $css = new CSSFile(new PackageStruct('library', 'path/to/library'), 'css/test.css', new CSSGroupSystem(), [
+    $css = new CSSFile(new PathStruct('path/to/library/css/test.css', 'path/to/library/css/test.css'), new CSSGroupSystem(), [
       'type' => 'setting',
       'preprocess' => true,
     ]);
