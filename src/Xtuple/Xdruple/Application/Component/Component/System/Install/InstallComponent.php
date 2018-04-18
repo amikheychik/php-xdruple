@@ -54,7 +54,7 @@ interface InstallComponent
   /**
    * @see hook_update_N()
    *
-   * @throws \DrupalUpdateException
+   * @throws \Throwable
    *
    * @param int $version
    *
