@@ -30,11 +30,6 @@ final class TestFinder
     foreach (array_reverse($folders[$path->extension()->type()->value()]) as $folder) {
       try {
         $directory = new RelativeDirectory($this->drupal, $folder);
-      }
-      catch (\Throwable $e) {
-        unset($directory);
-      }
-      if (isset($directory)) {
         $search = implode('/', array_filter([$folder, $path->extension()->name(), $path->relative()]));
         foreach (new RecursiveDirectorySetFile($directory) as $file) {
           if ($file->path()->absolute() === "{$this->drupal->path()->absolute()}/{$search}") {
@@ -44,6 +39,9 @@ final class TestFinder
             return new PathStruct($search, dirname($file->path()->absolute()));
           }
         }
+      }
+      catch (\Throwable $e) {
+        unset($directory);
       }
     }
     return new PathStruct('', '');

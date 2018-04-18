@@ -11,8 +11,8 @@ class ApplicationLoaderTest
   private $configPath = '/tmp/phpunit/xdruple';
 
   /**
-   * @expectedException \Xtuple\Util\Exception\Exception
-   * @expectedExceptionMessage Databases configuration is not set
+   * @expectedException \Throwable
+   * @expectedExceptionMessage Failed to prepare Application loader
    */
   public function testDrupal() {
     $this->setUp();

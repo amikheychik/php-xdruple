@@ -26,14 +26,11 @@ abstract class AbstractPathFinder
     return $this->path()->absolute();
   }
 
-  /** @var false|null|Path */
-  private $found = false;
+  /** @var null|Path */
+  private $found = null;
 
-  /**
-   * @return null|Path
-   */
-  private function path() {
-    if ($this->found === false) {
+  private function path(): Path {
+    if ($this->found === null) {
       $this->found = $this->finder->extension($this->path);
     }
     return $this->found;

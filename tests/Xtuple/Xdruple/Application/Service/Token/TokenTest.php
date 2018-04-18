@@ -14,6 +14,9 @@ use Xtuple\Xdruple\Application\Service\Token\Message\MessageStruct;
 
 class TokenTest
   extends TestCase {
+  /**
+   * @throws \Throwable
+   */
   public function testToken() {
     $token = new TestToken(new ArrayMapType([
       new TypeStruct(

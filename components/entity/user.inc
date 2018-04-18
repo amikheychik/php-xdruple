@@ -66,7 +66,7 @@ function xdruple_user_presave(&$edit, $account, $category) {
  * @param $account
  * @param $category
  *
- * @throws \Exception
+ * @throws \Throwable
  */
 function xdruple_user_insert(&$edit, $account, $category) {
   _xdruple_application_user_component()->userInsert($edit, $account, $category);

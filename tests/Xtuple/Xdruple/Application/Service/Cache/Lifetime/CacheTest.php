@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 class CacheTest
   extends TestCase {
   /**
-   * @expectedException \InvalidArgumentException
+   * @expectedException \Throwable
    * @expectedExceptionMessage Value `1` is not supported
    */
   public function testEnum() {

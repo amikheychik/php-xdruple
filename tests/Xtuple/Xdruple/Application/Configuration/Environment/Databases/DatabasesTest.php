@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 class DatabasesTest
   extends TestCase {
   /**
-   * @expectedException \Xtuple\Util\Exception\Exception
+   * @expectedException \Throwable
    * @expectedExceptionMessage Databases configuration is not set
    */
   public function testGlobal() {

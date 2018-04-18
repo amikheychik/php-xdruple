@@ -7,6 +7,9 @@ use Xtuple\Xdruple\Application\Component\Extension\Collection\Sequence\ArrayList
 
 class ComponentExtensionTest
   extends TestCase {
+  /**
+   * @throws \Throwable
+   */
   public function testAbstract() {
     $components = (new ArrayListComponentExtension([
       new TestComponentExtension('xdruple'),

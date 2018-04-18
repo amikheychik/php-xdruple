@@ -9,7 +9,7 @@ use Xtuple\Util\XML\Element\XMLElementString;
 final class XMLValueXMLElement
   extends AbstractXMLValue {
   /**
-   * @throws ChainException
+   * @throws \Throwable
    *
    * @param XMLElement $element
    */

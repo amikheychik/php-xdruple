@@ -9,6 +9,8 @@ final class ArrayMapMailMessage
   extends AbstractStrictlyTypedArrayMap
   implements MapMailMessage {
   /**
+   * @throws \Throwable - if the elements are of the wrong type
+   *
    * @param MailMessage[]|iterable $elements
    */
   public function __construct(iterable $elements = []) {

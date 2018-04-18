@@ -7,7 +7,7 @@ use Xtuple\Util\Exception\Exception;
 final class DatabasesGlobals
   extends AbstractDatabases {
   /**
-   * @throws Exception
+   * @throws \Throwable - if databases global variables are not set.
    */
   public function __construct() {
     if (empty($GLOBALS['databases']) && empty($GLOBALS['install']['databases'])) {

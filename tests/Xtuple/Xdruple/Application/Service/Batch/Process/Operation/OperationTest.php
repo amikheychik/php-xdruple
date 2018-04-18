@@ -14,6 +14,9 @@ use Xtuple\Xdruple\Application\Service\Log\Record\LogRecordStruct;
 
 class OperationTest
   extends TestCase {
+  /**
+   * @throws \Throwable
+   */
   public function testAbstract() {
     $initial = [
       'completed' => 0,

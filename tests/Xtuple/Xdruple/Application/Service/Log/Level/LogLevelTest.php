@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 class LogLevelTest
   extends TestCase {
   /**
-   * @expectedException \InvalidArgumentException
+   * @expectedException \Throwable
    * @expectedExceptionMessage Value `panic` is not supported
    * @throws \Throwable
    */

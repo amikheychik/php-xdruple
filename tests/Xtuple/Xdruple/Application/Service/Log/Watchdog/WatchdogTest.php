@@ -11,7 +11,7 @@ use Xtuple\Xdruple\Application\Service\Log\Watchdog\Record\WatchdogLogRecord;
 class WatchdogTest
   extends TestCase {
   /**
-   * @expectedException \InvalidArgumentException
+   * @expectedException \Throwable
    * @expectedExceptionMessage Value `8` is not supported
    * @throws \Throwable
    */

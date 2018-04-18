@@ -12,6 +12,9 @@ use Xtuple\Xdruple\Application\Service\Batch\Process\Operation\Collection\ArrayL
 
 class ProcessTest
   extends TestCase {
+  /**
+   * @throws \Throwable
+   */
   public function testStruct() {
     $process = new ProcessStruct(new ArrayListOperation());
     self::assertTrue($process->operations()->isEmpty());

@@ -12,6 +12,7 @@ final class TestMail
   private $mail;
 
   public function __construct() {
+    /** @noinspection PhpUnhandledExceptionInspection - no arguments passed */
     $this->mail = new ArrayListMailMessage();
   }
 

@@ -12,6 +12,9 @@ use Xtuple\Xdruple\Application\Service\Locale\Language\Language;
 
 class TypeTest
   extends TestCase {
+  /**
+   * @throws \Throwable
+   */
   public function testStruct() {
     $types = (new ArrayMapType([
       new TestType(new TypeStruct(

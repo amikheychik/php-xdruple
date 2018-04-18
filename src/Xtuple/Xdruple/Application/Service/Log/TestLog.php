@@ -13,6 +13,7 @@ final class TestLog
   private $log;
 
   public function __construct() {
+    /** @noinspection PhpUnhandledExceptionInspection - no arguments passed */
     $this->log = new ArrayListLogRecord();
   }
 

@@ -7,6 +7,13 @@ use Xtuple\Xdruple\Application\Component\Extension\ComponentExtension;
 
 interface ListComponentExtension
   extends Sequence {
+  /**
+   * @throws \Throwable - if extension is of the wrong subtype
+   *
+   * @param ComponentExtension $extension
+   *
+   * @return ListComponentExtension
+   */
   public function append(ComponentExtension $extension): ListComponentExtension;
 
   /**

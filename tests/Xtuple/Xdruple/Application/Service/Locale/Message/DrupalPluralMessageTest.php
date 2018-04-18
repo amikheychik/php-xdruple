@@ -3,16 +3,19 @@
 namespace Xtuple\Xdruple\Application\Service\Locale\Message;
 
 use PHPUnit\Framework\TestCase;
-use Xtuple\Util\Type\String\Message\Argument\Collection\Set\ArraySetArgument;
+use Xtuple\Util\Type\String\Message\Argument\Collection\Map\ArrayMapArgument;
 use Xtuple\Util\Type\String\Message\Type\Plural\PluralMessageFromStrings;
 use Xtuple\Util\Type\String\Message\Type\String\StringArgument;
 
 class DrupalPluralMessageTest
   extends TestCase {
+  /**
+   * @throws \Throwable
+   */
   public function testConstructor() {
     $message = new DrupalPluralMessage(new PluralMessageFromStrings(10.5, '@count {type} %items', 'One {type} %item', [
       '=0' => 'No {type} %items',
-    ], new ArraySetArgument([
+    ], new ArrayMapArgument([
       new StringArgument('type', 'test'),
       new StringArgument('%item', 'item'),
       new StringArgument('%items', 'items'),

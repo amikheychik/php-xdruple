@@ -2,7 +2,7 @@
 
 namespace Xtuple\Xdruple\Application\Service\Locale\Message;
 
-use Xtuple\Util\Type\String\Message\Argument\Collection\Set\SetArgument;
+use Xtuple\Util\Type\String\Message\Argument\Collection\Map\MapArgument;
 use Xtuple\Util\Type\String\Message\Message\Message;
 
 final class DrupalMessage
@@ -30,7 +30,7 @@ final class DrupalMessage
     return preg_replace('/{(\w+)}/', '!$1', $this->message->template());
   }
 
-  public function arguments(): SetArgument {
+  public function arguments(): MapArgument {
     return $this->message->arguments();
   }
 }

@@ -16,5 +16,11 @@ interface Component {
    */
   public function dependencies(): array;
 
+  /**
+   * @throws \Throwable - if component is not extendable;
+   *                    - if extension subtype is not supported.
+   *
+   * @param ComponentExtension $extension
+   */
   public function extend(ComponentExtension $extension);
 }

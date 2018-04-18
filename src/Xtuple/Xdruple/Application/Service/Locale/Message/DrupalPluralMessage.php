@@ -2,7 +2,7 @@
 
 namespace Xtuple\Xdruple\Application\Service\Locale\Message;
 
-use Xtuple\Util\Type\String\Message\Argument\Collection\Set\SetArgument;
+use Xtuple\Util\Type\String\Message\Argument\Collection\Map\MapArgument;
 use Xtuple\Util\Type\String\Message\Message\Message;
 use Xtuple\Util\Type\String\Message\Type\Number\NumberMessage;
 use Xtuple\Util\Type\String\Message\Type\Plural\PluralMessage;
@@ -25,7 +25,7 @@ final class DrupalPluralMessage
     return $this->plural->format($locale);
   }
 
-  public function plurals(): SetArgument {
+  public function plurals(): MapArgument {
     return $this->plural->plurals();
   }
 
@@ -49,7 +49,7 @@ final class DrupalPluralMessage
     return $this->plural->count();
   }
 
-  public function arguments(): SetArgument {
+  public function arguments(): MapArgument {
     return $this->plural->arguments();
   }
 

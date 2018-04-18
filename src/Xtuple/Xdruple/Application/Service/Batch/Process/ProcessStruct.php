@@ -27,6 +27,7 @@ final class ProcessStruct
     $this->operations = $operations;
     $this->title = $title;
     $this->messages = $messages ?: new MessagesStruct();
+    /** @noinspection PhpUnhandledExceptionInspection - no arguments passed */
     $this->css = $css ?: new ArrayListCSS();
     $this->urlOptions = $urlOptions;
   }

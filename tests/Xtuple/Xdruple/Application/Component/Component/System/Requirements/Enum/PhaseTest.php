@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 class PhaseTest
   extends TestCase {
   /**
-   * @expectedException \InvalidArgumentException
+   * @expectedException \Throwable
    * @expectedExceptionMessage Value `shutdown` is not supported
    */
   public function testPhase() {

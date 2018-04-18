@@ -7,6 +7,9 @@ use Xtuple\Util\XML\Element\XMLElementString;
 
 class XMLValueTest
   extends TestCase {
+  /**
+   * @throws \Throwable
+   */
   public function testStruct() {
     $value = new XMLValueStruct(null);
     self::assertNull($value->xml());
@@ -18,26 +21,8 @@ class XMLValueTest
   }
 
   /**
-   * @expectedException \Xtuple\Util\Exception\ChainException
-   * @expectedExceptionMessage XML element Page is not an XML value
+   * @throws \Throwable
    */
-  public function testXMLElement() {
-    /** @noinspection PhpUnhandledExceptionInspection */
-    $value = new XMLValueXMLElement(new XMLElementString('<Variable></Variable>'));
-    self::assertNull($value->xml());
-    self::assertEquals('', $value->value());
-    /** @noinspection PhpUnhandledExceptionInspection */
-    $value = new XMLValueXMLElement(new XMLElementString(implode('', [
-      '<Configuration name="test">',
-      '<Page><Element name="teaser" access="false"/></Page>',
-      '</Configuration>',
-    ])));
-    self::assertNotNull($value->xml());
-    self::assertEquals('<Page><Element name="teaser" access="false"/></Page>', $value->value());
-    /** @noinspection PhpUnhandledExceptionInspection */
-    new XMLValueXMLElement(new XMLElementString('<Page>Content</Page>'));
-  }
-
   public function testOptionalXMLElement() {
     $value = new OptionalXMLValueXMLElement(new XMLElementString('<Page>Content</Page>'));
     self::assertFalse($value->isPresent());
@@ -55,5 +40,26 @@ class XMLValueTest
     self::assertTrue($value->isPresent());
     self::assertNotNull($value->xml());
     self::assertEquals('<Page><Element name="teaser" access="false"/></Page>', $value->value());
+  }
+
+  /**
+   * @expectedException \Throwable
+   * @expectedExceptionMessage XML element Page is not an XML value
+   */
+  public function testXMLElement() {
+    /** @noinspection PhpUnhandledExceptionInspection */
+    $value = new XMLValueXMLElement(new XMLElementString('<Variable></Variable>'));
+    self::assertNull($value->xml());
+    self::assertEquals('', $value->value());
+    /** @noinspection PhpUnhandledExceptionInspection */
+    $value = new XMLValueXMLElement(new XMLElementString(implode('', [
+      '<Configuration name="test">',
+      '<Page><Element name="teaser" access="false"/></Page>',
+      '</Configuration>',
+    ])));
+    self::assertNotNull($value->xml());
+    self::assertEquals('<Page><Element name="teaser" access="false"/></Page>', $value->value());
+    /** @noinspection PhpUnhandledExceptionInspection */
+    new XMLValueXMLElement(new XMLElementString('<Page>Content</Page>'));
   }
 }

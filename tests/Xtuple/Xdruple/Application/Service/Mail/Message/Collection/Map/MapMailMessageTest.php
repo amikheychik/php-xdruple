@@ -19,6 +19,7 @@ class MapMailMessageTest
 final class TestEmails
   extends AbstractMapMailMessage {
   public function __construct() {
+    /** @noinspection PhpUnhandledExceptionInspection - verified Message type */
     parent::__construct(new ArrayMapMailMessage([
       new MailMessageStruct('xdruple', null, 'test@example.com', 'Test email', 'Test email body'),
       new MailMessageStruct('xdruple', null, 'mail@example.com', 'Test', 'Test email'),

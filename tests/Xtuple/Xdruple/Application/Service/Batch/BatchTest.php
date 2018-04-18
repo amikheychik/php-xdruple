@@ -17,6 +17,9 @@ use Xtuple\Xdruple\Application\Service\Log\Record\LogRecord;
 
 class BatchTest
   extends TestCase {
+  /**
+   * @throws \Throwable
+   */
   public function testBatch() {
     $batch = new TestBatch();
     $batch->set(new ProcessStruct(new ArrayListOperation()));

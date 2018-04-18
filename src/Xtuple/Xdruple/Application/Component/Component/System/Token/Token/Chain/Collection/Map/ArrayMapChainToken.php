@@ -9,6 +9,8 @@ final class ArrayMapChainToken
   extends AbstractStrictlyTypedArrayMap
   implements MapChainToken {
   /**
+   * @throws \Throwable - if the elements are of the wrong type
+   *
    * @param ChainToken[]|iterable $elements
    */
   public function __construct(iterable $elements = []) {

@@ -16,7 +16,7 @@ use Xtuple\Xdruple\Application\Service\Session\Notification\Type\Notification\Wa
 class NotificationTypeTest
   extends TestCase {
   /**
-   * @expectedException \InvalidArgumentException
+   * @expectedException \Throwable
    * @expectedExceptionMessage Value `debug` is not supported
    * @throws \Throwable
    */

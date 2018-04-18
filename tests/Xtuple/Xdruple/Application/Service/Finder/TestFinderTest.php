@@ -3,7 +3,6 @@
 namespace Xtuple\Xdruple\Application\Service\Finder;
 
 use PHPUnit\Framework\TestCase;
-use Xtuple\Util\Exception\Exception;
 use Xtuple\Util\File\Directory\Directory;
 use Xtuple\Util\File\Directory\PackageDirectory;
 use Xtuple\Util\File\Directory\RelativeDirectory;
@@ -22,7 +21,7 @@ class TestFinderTest
   private $finder;
 
   /**
-   * @throws Exception
+   * @throws \Throwable
    */
   public function setUp() {
     parent::setUp();
@@ -54,6 +53,7 @@ class TestFinderTest
 
   private function assert(Path $path, string $relative): void {
     self::assertEquals($relative, $path->relative());
+    /** @noinspection PhpUnhandledExceptionInspection */
     self::assertEquals(
       $relative
         ? "{$this->root->path()->absolute()}/{$relative}"

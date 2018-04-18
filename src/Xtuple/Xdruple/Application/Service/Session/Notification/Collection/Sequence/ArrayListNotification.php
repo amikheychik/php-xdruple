@@ -9,6 +9,8 @@ final class ArrayListNotification
   extends AbstractStrictlyTypedArrayList
   implements ListNotification {
   /**
+   * @throws \Throwable - if the elements are of the wrong type
+   *
    * @param Notification[]|iterable $elements
    */
   public function __construct(iterable $elements = []) {
@@ -29,6 +31,7 @@ final class ArrayListNotification
     if (!$exists) {
       $notifications[] = $notification;
     }
+    /** @noinspection PhpUnhandledExceptionInspection - verified Notification type */
     return new ArrayListNotification($notifications);
   }
 
@@ -39,6 +42,7 @@ final class ArrayListNotification
       $notifications[] = $existing;
     }
     $notifications[] = $notification;
+    /** @noinspection PhpUnhandledExceptionInspection - verified Notification type */
     return new ArrayListNotification($notifications);
   }
 }

@@ -1,6 +1,5 @@
 <?php declare(strict_types=1);
 
-use Xtuple\Util\Exception\Exception;
 use Xtuple\Xdruple\Application\Application;
 use Xtuple\Xdruple\Application\Component\Component\System\Lifecycle\LifecycleComponent;
 use Xtuple\Xdruple\Application\Loader\DrupalApplicationLoader;
@@ -14,7 +13,7 @@ require_once DRUPAL_ROOT . '/includes/locale.inc';
  * Application singleton.
  *
  * @return Application
- * @throws Exception
+ * @throws \Throwable
  */
 function xdruple_application(): Application {
   static $application;

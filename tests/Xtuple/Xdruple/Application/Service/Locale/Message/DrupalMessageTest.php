@@ -3,7 +3,7 @@
 namespace Xtuple\Xdruple\Application\Service\Locale\Message;
 
 use PHPUnit\Framework\TestCase;
-use Xtuple\Util\Type\String\Message\Argument\Collection\Set\ArraySetArgument;
+use Xtuple\Util\Type\String\Message\Argument\Collection\Map\ArrayMapArgument;
 use Xtuple\Util\Type\String\Message\Message\MessageStruct;
 use Xtuple\Util\Type\String\Message\Type\Plural\PluralArgumentFromStrings;
 use Xtuple\Util\Type\String\Message\Type\Plural\PluralMessage;
@@ -11,9 +11,12 @@ use Xtuple\Util\Type\String\Message\Type\String\StringArgument;
 
 class DrupalMessageTest
   extends TestCase {
+  /**
+   * @throws \Throwable
+   */
   public function testCompatibility() {
     $message = new DrupalMessage(
-      new MessageStruct('%extension file upload @status. See !logs and {results}.', new ArraySetArgument([
+      new MessageStruct('%extension file upload @status. See !logs and {results}.', new ArrayMapArgument([
         new StringArgument('%extension', 'CSV'),
         new StringArgument('@status', 'successful'),
         new StringArgument('!logs', '<a href="/logs">logs</a>'),
@@ -27,8 +30,11 @@ class DrupalMessageTest
     );
   }
 
+  /**
+   * @throws \Throwable
+   */
   public function testArguments() {
-    $message = new MessageStruct('{extension} file upload {status}.', new ArraySetArgument([
+    $message = new MessageStruct('{extension} file upload {status}.', new ArrayMapArgument([
       new StringArgument('extension', 'CSV'),
       new StringArgument('status', 'successful'),
     ]));
@@ -37,10 +43,13 @@ class DrupalMessageTest
     self::assertEquals('CSV file upload successful.', $message->__toString());
   }
 
+  /**
+   * @throws \Throwable
+   */
   public function testPluralArguments() {
-    $message = new MessageStruct('{lines} processed and {users} updated.', new ArraySetArgument([
+    $message = new MessageStruct('{lines} processed and {users} updated.', new ArrayMapArgument([
       new PluralArgumentFromStrings('lines', 10, '{count} lines', 'One line'),
-      new PluralArgumentFromStrings('users', 2, '{count} users', 'One user {name}', [], new ArraySetArgument([
+      new PluralArgumentFromStrings('users', 2, '{count} users', 'One user {name}', [], new ArrayMapArgument([
         new StringArgument('name', 'Developer'),
       ])),
     ]));

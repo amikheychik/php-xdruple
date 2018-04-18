@@ -12,7 +12,7 @@ use Xtuple\Xdruple\Application\Service\Finder\Extension\Type\Theme\Theme;
 class TypeTest
   extends TestCase {
   /**
-   * @expectedException \InvalidArgumentException
+   * @expectedException \Throwable
    * @expectedExceptionMessage Value `resource` is not supported
    */
   public function testEnum() {

@@ -2,7 +2,7 @@
 
 namespace Xtuple\Xdruple\Application\Loader;
 
-use Xtuple\Util\Exception\Exception;
+use Xtuple\Util\Exception\ChainException;
 use Xtuple\Util\File\Path\PathString;
 use Xtuple\Util\XML\Element\XMLElementString;
 use Xtuple\Xdruple\Application\Application;
@@ -14,18 +14,23 @@ final class DrupalApplicationLoader
   private $loader;
 
   /**
-   * @throws Exception
+   * @throws \Throwable
    *
    * @param string $configurationPath
    */
   public function __construct(string $configurationPath) {
-    $this->loader = new ApplicationXMLLoader(
-      new XMLElementString(file_get_contents("{$configurationPath}/application/application.xml")),
-      (new PathString("{$configurationPath}/application/environment.xml"))->isFile()
-        ? new XMLElementString(file_get_contents("{$configurationPath}/application/environment.xml"))
-        : new XMLElementString('<environment type="production"></environment>'),
-      new DatabasesGlobals()
-    );
+    try {
+      $this->loader = new ApplicationXMLLoader(
+        new XMLElementString(file_get_contents("{$configurationPath}/application/application.xml")),
+        (new PathString("{$configurationPath}/application/environment.xml"))->isFile()
+          ? new XMLElementString(file_get_contents("{$configurationPath}/application/environment.xml"))
+          : new XMLElementString('<environment type="production"></environment>'),
+        new DatabasesGlobals()
+      );
+    }
+    catch (\Throwable $e) {
+      throw new ChainException($e, 'Failed to prepare Application loader');
+    }
   }
 
   public function application(): Application {

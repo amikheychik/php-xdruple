@@ -13,6 +13,8 @@ final class ArrayListCSS
   extends AbstractList
   implements ListCSS {
   /**
+   * @throws \Throwable - if the elements are of the wrong type
+   *
    * @param CSS[] $elements
    */
   public function __construct(array $elements = []) {

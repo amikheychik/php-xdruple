@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 class EnvironmentTypeTest
   extends TestCase {
   /**
-   * @expectedException \InvalidArgumentException
+   * @expectedException \Throwable
    * @expectedExceptionMessage Value `dev` is not supported
    */
   public function testEnum() {

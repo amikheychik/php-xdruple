@@ -62,6 +62,21 @@ class EnvironmentTest
       'timezone' => 'America/New_York',
       'country' => 'US',
     ], $environment->value());
+    try {
+      new EnvironmentXMLElement(new XMLElementString(implode('', [
+        '<environment type="missing">',
+        '</environment>',
+      ])), new DatabasesArray($this->databases()));
+    }
+    catch (\Throwable $e) {
+      self::assertEquals('Failed to parse environment XML information', $e->getMessage());
+    }
+    finally {
+      if (!isset($e)) {
+        self::fail('Environment XML exception is not thrown');
+      }
+      unset($e);
+    }
   }
 
   private function databases(): array {

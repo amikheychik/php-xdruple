@@ -4,7 +4,7 @@ namespace Xtuple\Xdruple\Application\Service\Locale;
 
 use PHPUnit\Framework\TestCase;
 use Xtuple\Util\Type\String\Message\Argument\ArgumentStruct;
-use Xtuple\Util\Type\String\Message\Argument\Collection\Set\ArraySetArgument;
+use Xtuple\Util\Type\String\Message\Argument\Collection\Map\ArrayMapArgument;
 use Xtuple\Util\Type\String\Message\Message\MessageStruct;
 use Xtuple\Util\Type\String\Message\Type\Number\Float\FloatArgument;
 use Xtuple\Util\Type\String\Message\Type\Number\Float\FloatMessage;
@@ -45,52 +45,55 @@ class LocaleTest
     self::assertEquals('тест', $this->locale->t('test', $this->language()));
   }
 
+  /**
+   * @throws \Throwable
+   */
   public function testTranslate() {
     self::assertEquals('test', $this->locale->translate(new StringMessage('test')));
     self::assertEquals('тест', $this->locale->translate(new StringMessage('test'), $this->language()));
     self::assertEquals('Pi number is approximately 3.142', $this->locale->translate(
-      new MessageStruct('Pi number is approximately %pi', new ArraySetArgument([
+      new MessageStruct('Pi number is approximately %pi', new ArrayMapArgument([
         new FloatArgument('%pi', pi()),
       ]))
     ));
     self::assertEquals('Pi number is approximately 3.1416', $this->locale->translate(
-      new MessageStruct('Pi number is approximately %pi', new ArraySetArgument([
+      new MessageStruct('Pi number is approximately %pi', new ArrayMapArgument([
         new FloatArgument('%pi', pi(), '#.0000'),
       ]))
     ));
     self::assertEquals('Число Пи приблизительно равно 3,14159', $this->locale->translate(
-      new MessageStruct('Pi number is approximately %pi', new ArraySetArgument([
+      new MessageStruct('Pi number is approximately %pi', new ArrayMapArgument([
         new FloatArgument('%pi', pi(), '#.0000#'),
       ])),
       $this->language()
     ));
     self::assertEquals('one is one, 2 is two and 3 integer numbers, not float is three for real', $this->locale->translate(
-      new MessageStruct('!one is one, %two is two and @three is three for %float', new ArraySetArgument([
+      new MessageStruct('!one is one, %two is two and @three is three for %float', new ArrayMapArgument([
         new StringArgument('!one', 'one'),
         new IntegerArgument('%two', 2),
-        new PluralArgumentFromStrings('@three', 3, '{count} {type} numbers, not %float', 'one {type} number', [], new ArraySetArgument([
+        new PluralArgumentFromStrings('@three', 3, '{count} {type} numbers, not %float', 'one {type} number', [], new ArrayMapArgument([
           new StringArgument('type', 'integer'),
-          new ArgumentStruct('%float', new MessageStruct('{real}', new ArraySetArgument([
+          new ArgumentStruct('%float', new MessageStruct('{real}', new ArrayMapArgument([
             new StringArgument('real', 'float'),
           ]))),
         ])),
-        new ArgumentStruct('%float', new MessageStruct('{real}', new ArraySetArgument([
+        new ArgumentStruct('%float', new MessageStruct('{real}', new ArrayMapArgument([
           new StringArgument('real', 'real'),
         ]))),
       ]))
     ));
     // Inner arguments and strings are translated automatically
     self::assertEquals('один это один, 2 это два и 3 целые числа, не вещественные это три как вещественное', $this->locale->translate(
-      new MessageStruct('!one is one, %two is two and @three is three as %float', new ArraySetArgument([
+      new MessageStruct('!one is one, %two is two and @three is three as %float', new ArrayMapArgument([
         new StringArgument('!one', 'one'),
         new IntegerArgument('%two', 2),
-        new PluralArgumentFromStrings('@three', 3, '{count} {type} numbers, not %float', 'one {type} number', [], new ArraySetArgument([
+        new PluralArgumentFromStrings('@three', 3, '{count} {type} numbers, not %float', 'one {type} number', [], new ArrayMapArgument([
           new StringArgument('type', 'integer'),
-          new ArgumentStruct('%float', new MessageStruct('{real}', new ArraySetArgument([
+          new ArgumentStruct('%float', new MessageStruct('{real}', new ArrayMapArgument([
             new StringArgument('real', 'float'),
           ]))),
         ])),
-        new ArgumentStruct('%float', new MessageStruct('{real}', new ArraySetArgument([
+        new ArgumentStruct('%float', new MessageStruct('{real}', new ArrayMapArgument([
           new StringArgument('real', 'real'),
         ]))),
       ])),
@@ -98,27 +101,33 @@ class LocaleTest
     ));
   }
 
+  /**
+   * @throws \Throwable
+   */
   public function testPluralStrings() {
     self::assertEquals('10 items of apples', $this->locale->plural(
-      new PluralMessageFromStrings(10, '{count} items of {something}', 'One item of {something}', [], new ArraySetArgument([
+      new PluralMessageFromStrings(10, '{count} items of {something}', 'One item of {something}', [], new ArrayMapArgument([
         new StringArgument('something', 'apples'),
       ])))
     );
     self::assertEquals('One item of apples', $this->locale->plural(
-      new PluralMessageFromStrings(1, '{count} items of {something}', 'One item of {something}', [], new ArraySetArgument([
+      new PluralMessageFromStrings(1, '{count} items of {something}', 'One item of {something}', [], new ArrayMapArgument([
         new StringArgument('something', 'apples'),
       ]))
     ));
   }
 
+  /**
+   * @throws \Throwable
+   */
   public function testPluralDrupalStrings() {
     self::assertEquals('10 items of apples', $this->locale->plural(
-      new PluralMessageFromStrings(10, '@count items of %something', 'One item of %something', [], new ArraySetArgument([
+      new PluralMessageFromStrings(10, '@count items of %something', 'One item of %something', [], new ArrayMapArgument([
         new StringArgument('%something', 'apples'),
       ])))
     );
     self::assertEquals('One item of apples', $this->locale->plural(
-      new PluralMessageFromStrings(1, '@count items of %something', 'One item of %something', [], new ArraySetArgument([
+      new PluralMessageFromStrings(1, '@count items of %something', 'One item of %something', [], new ArrayMapArgument([
         new StringArgument('%something', 'apples'),
       ]))
     ));

@@ -9,6 +9,8 @@ final class ArrayListLogRecord
   extends AbstractStrictlyTypedArrayList
   implements ListLogRecord {
   /**
+   * @throws \Throwable - if the elements are of the wrong type
+   *
    * @param LogRecord[]|iterable $elements
    */
   public function __construct(iterable $elements = []) {
@@ -21,6 +23,7 @@ final class ArrayListLogRecord
       $records[] = $element;
     }
     $records[] = $record;
+    /** @noinspection PhpUnhandledExceptionInspection - verified LogRecord type */
     return new ArrayListLogRecord($records);
   }
 }

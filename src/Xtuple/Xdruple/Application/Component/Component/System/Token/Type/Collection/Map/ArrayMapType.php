@@ -9,6 +9,8 @@ final class ArrayMapType
   extends AbstractStrictlyTypedArrayMap
   implements MapType {
   /**
+   * @throws \Throwable - if the elements are of the wrong type
+   *
    * @param Type[]|iterable $elements
    */
   public function __construct(iterable $elements = []) {
@@ -23,6 +25,7 @@ final class ArrayMapType
     foreach ($types as $type) {
       $elements[] = $type;
     }
+    /** @noinspection PhpUnhandledExceptionInspection - verified Type type */
     return new ArrayMapType($elements);
   }
 }

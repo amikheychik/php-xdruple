@@ -28,6 +28,7 @@ final class TypeStruct
     $this->description = $description;
     $this->data = $data;
     $this->tokens = $tokens;
+    /** @noinspection PhpUnhandledExceptionInspection - no arguments passed */
     $this->chained = $chained ?: new ArrayMapChainToken();
   }
 

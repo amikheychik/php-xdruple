@@ -11,6 +11,12 @@ final class ArrayListComponentExtension
   /** @var string */
   private $subtype;
 
+  /**
+   * @throws \Throwable - if $elements contain an element of the wrong $subtype
+   *
+   * @param array       $elements
+   * @param null|string $subtype
+   */
   public function __construct(array $elements = [], ?string $subtype = null) {
     $this->subtype = $subtype ?: ComponentExtension::class;
     parent::__construct($this->subtype, $elements);

@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 class LanguageDirectionTest
   extends TestCase {
   /**
-   * @expectedException \InvalidArgumentException
+   * @expectedException \Throwable
    * @expectedExceptionMessage Value `2` is not supported in
    *                           Xtuple\Xdruple\Application\Service\Locale\Language\Direction\LanguageDirection enum
    */

@@ -10,6 +10,7 @@ final class MutableListNotification
   private $notifications;
 
   public function __construct() {
+    /** @noinspection PhpUnhandledExceptionInspection - no arguments passed */
     $this->notifications = new ArrayListNotification();
   }
 

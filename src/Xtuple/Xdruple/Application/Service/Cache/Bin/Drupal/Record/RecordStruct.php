@@ -16,12 +16,12 @@ final class RecordStruct
   private $expire;
 
   public function __construct(Key $key, $data, int $expire = Cache::PERMANENT) {
+    /** @noinspection PhpUnhandledExceptionInspection - argument checked to be positive */
+    $expiresAt = $expire > 0 ? new DateTimeTimestamp($expire) : null;
     parent::__construct(new CacheRecordStruct(
       new KeyFromKey($key),
       $data,
-      $expire > 0
-        ? new DateTimeTimestamp($expire)
-        : null
+      $expiresAt
     ));
     $this->expire = $expire;
   }

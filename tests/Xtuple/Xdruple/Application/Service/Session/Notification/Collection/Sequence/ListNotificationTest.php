@@ -10,6 +10,9 @@ use Xtuple\Xdruple\Application\Service\Session\Notification\Type\Notification\St
 
 class ListNotificationTest
   extends TestCase {
+  /**
+   * @throws \Throwable
+   */
   public function testArrayList() {
     $list = new ArrayListNotification();
     self::assertEquals(0, $list->count());

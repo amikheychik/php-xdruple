@@ -9,6 +9,8 @@ final class ArrayListOperation
   extends AbstractStrictlyTypedArrayList
   implements ListOperation {
   /**
+   * @throws \Throwable - if the elements are of the wrong type
+   *
    * @param Operation[]|iterable $elements
    */
   public function __construct(iterable $elements = []) {

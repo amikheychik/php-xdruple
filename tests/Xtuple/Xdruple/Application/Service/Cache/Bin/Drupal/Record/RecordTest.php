@@ -34,6 +34,9 @@ class RecordTest
     self::assertFalse($record->expired());
   }
 
+  /**
+   * @throws \Throwable
+   */
   public function testFromRecord() {
     $data = (object) ['user' => 1];
     $record = new RecordFromRecord(new \Xtuple\Util\Cache\Record\RecordStruct(

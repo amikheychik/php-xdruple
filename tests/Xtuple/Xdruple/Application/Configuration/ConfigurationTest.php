@@ -20,6 +20,9 @@ class ConfigurationTest
     ], $configuration->value());
   }
 
+  /**
+   * @throws \Throwable
+   */
   public function testXMLElement() {
     $configuration = new ConfigurationXMLElement(new XMLElementString('<configuration/>'));
     self::assertEquals([], $configuration->value());

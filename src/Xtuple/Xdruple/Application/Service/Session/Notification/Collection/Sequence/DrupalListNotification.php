@@ -39,6 +39,7 @@ final class DrupalListNotification
         }
       }
     }
+    /** @noinspection PhpUnhandledExceptionInspection - verified Notification type */
     $this->index = new ArrayListNotification($index);
     return $this->index;
   }

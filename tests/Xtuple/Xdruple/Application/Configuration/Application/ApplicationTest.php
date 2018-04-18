@@ -18,6 +18,9 @@ class ApplicationTest
     ], $application->value());
   }
 
+  /**
+   * @throws \Throwable
+   */
   public function testXMLElement() {
     $application = new ApplicationXMLElement(new XMLElementString(implode('', [
       '<application></application>',
