@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4eeb1a6303698fc665eaf69f3fa053fc",
+    "content-hash": "851382cf1748cf1d302c802ded0b3150",
     "packages": [
         {
             "name": "drupal/ctools",
@@ -101,17 +101,17 @@
         },
         {
             "name": "drupal/drupal",
-            "version": "7.58.0",
+            "version": "7.59.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/drupal",
-                "reference": "7.58"
+                "reference": "7.59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/drupal-7.58.zip",
-                "reference": "7.58",
-                "shasum": "4fc6d540f529bb98dc2b811e1c1193de858a5d79"
+                "url": "https://ftp.drupal.org/files/projects/drupal-7.59.zip",
+                "reference": "7.59",
+                "shasum": "6f9c6ec087c3e76b880d28b59d7f2afb4587e095"
             },
             "type": "drupal-core",
             "extra": {
@@ -119,8 +119,8 @@
                     "dev-7.x": "7.x-dev"
                 },
                 "drupal": {
-                    "version": "7.58",
-                    "datestamp": "1522264797",
+                    "version": "7.59",
+                    "datestamp": "1524674011",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -393,12 +393,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtuple/php-util.git",
-                "reference": "5462767f7a4a43bcb5149b3647ad47531abe587d"
+                "reference": "44c9d6ee19a6b2af6f1f05ab7d557a3bdc191dc4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtuple/php-util/zipball/5462767f7a4a43bcb5149b3647ad47531abe587d",
-                "reference": "5462767f7a4a43bcb5149b3647ad47531abe587d",
+                "url": "https://api.github.com/repos/xtuple/php-util/zipball/44c9d6ee19a6b2af6f1f05ab7d557a3bdc191dc4",
+                "reference": "44c9d6ee19a6b2af6f1f05ab7d557a3bdc191dc4",
                 "shasum": ""
             },
             "require": {
@@ -429,7 +429,7 @@
             ],
             "description": "xTuple PHP utility classes",
             "homepage": "https://github.com/xtuple/php-util",
-            "time": "2018-04-20T16:07:41+00:00"
+            "time": "2018-04-24T10:35:19+00:00"
         }
     ],
     "packages-dev": [
