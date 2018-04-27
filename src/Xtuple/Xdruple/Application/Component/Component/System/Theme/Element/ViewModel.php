@@ -2,7 +2,6 @@
 
 namespace Xtuple\Xdruple\Application\Component\Component\System\Theme\Element;
 
-interface LazyRenderView
-  extends LazyRender {
+interface ViewModel {
   public function view(array $overrides = []): array;
 }

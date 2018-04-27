@@ -2,7 +2,7 @@
 
 namespace Xtuple\Xdruple\Application\Service\Log\Record\Details;
 
-use Xtuple\Xdruple\Application\Component\Component\System\Theme\Element\LazyRenderView;
+use Xtuple\Xdruple\Application\Component\Component\System\Theme\Element\LazyRenderViewModel;
 use Xtuple\Xdruple\Application\Service\Log\Record\Referrer\LogRecordReferrer;
 
 interface LogRecordDetails
@@ -13,7 +13,7 @@ interface LogRecordDetails
 
   public function unserialize($serialized);
 
-  public function render(): ?LazyRenderView;
+  public function render(): ?LazyRenderViewModel;
 
   public function link(): ?LogRecordReferrer;
 }
