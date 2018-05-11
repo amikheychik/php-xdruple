@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "851382cf1748cf1d302c802ded0b3150",
+    "content-hash": "5d1cdfe8dd95e97580176698669a98f9",
     "packages": [
         {
             "name": "drupal/ctools",
@@ -304,21 +304,21 @@
         },
         {
             "name": "xtuple/api",
-            "version": "dev-master",
+            "version": "dev-xtc/1.0.x",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtuple/php-api.git",
-                "reference": "c78ad7d03a69f446c525b1b45c63dce0140549a9"
+                "reference": "14eeeae94d770cb06f3a01e4a0a661ae7eecdada"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtuple/php-api/zipball/c78ad7d03a69f446c525b1b45c63dce0140549a9",
-                "reference": "c78ad7d03a69f446c525b1b45c63dce0140549a9",
+                "url": "https://api.github.com/repos/xtuple/php-api/zipball/14eeeae94d770cb06f3a01e4a0a661ae7eecdada",
+                "reference": "14eeeae94d770cb06f3a01e4a0a661ae7eecdada",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1",
-                "xtuple/util": "dev-master"
+                "xtuple/util": "dev-xtc/1.0.x"
             },
             "require-dev": {
                 "phpunit/phpunit": "^7.0"
@@ -342,26 +342,26 @@
             ],
             "description": "xTuple REST API PHP client",
             "homepage": "https://github.com/xtuple/php-api",
-            "time": "2018-02-19T20:31:12+00:00"
+            "time": "2018-05-11T14:46:52+00:00"
         },
         {
             "name": "xtuple/api-commerce",
-            "version": "dev-master",
+            "version": "dev-xtc/1.0.x",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtuple/php-api-commerce.git",
-                "reference": "783817da72d6cd5a9659d1a9ee7e6fa50646e3f3"
+                "reference": "cbdf1a21d352f657404bc245719c4e3bae58833a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtuple/php-api-commerce/zipball/783817da72d6cd5a9659d1a9ee7e6fa50646e3f3",
-                "reference": "783817da72d6cd5a9659d1a9ee7e6fa50646e3f3",
+                "url": "https://api.github.com/repos/xtuple/php-api-commerce/zipball/cbdf1a21d352f657404bc245719c4e3bae58833a",
+                "reference": "cbdf1a21d352f657404bc245719c4e3bae58833a",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1",
-                "xtuple/api": "dev-master",
-                "xtuple/util": "dev-master"
+                "xtuple/api": "dev-xtc/1.0.x",
+                "xtuple/util": "dev-xtc/1.0.x"
             },
             "require-dev": {
                 "phpunit/phpunit": "^7.0"
@@ -385,11 +385,11 @@
             ],
             "description": "xTuple Commerce API client",
             "homepage": "https://github.com/xtuple/php-api-commerce",
-            "time": "2018-02-19T20:37:29+00:00"
+            "time": "2018-05-11T14:50:07+00:00"
         },
         {
             "name": "xtuple/util",
-            "version": "dev-master",
+            "version": "dev-xtc/1.0.x",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtuple/php-util.git",
@@ -851,16 +851,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "6.0.3",
+            "version": "6.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "774a82c0c5da4c1c7701790c262035d235ab7856"
+                "reference": "52187754b0eed0b8159f62a6fa30073327e8c2ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/774a82c0c5da4c1c7701790c262035d235ab7856",
-                "reference": "774a82c0c5da4c1c7701790c262035d235ab7856",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/52187754b0eed0b8159f62a6fa30073327e8c2ca",
+                "reference": "52187754b0eed0b8159f62a6fa30073327e8c2ca",
                 "shasum": ""
             },
             "require": {
@@ -910,7 +910,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-04-06T15:39:20+00:00"
+            "time": "2018-04-29T14:59:09+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1100,16 +1100,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "7.1.4",
+            "version": "7.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "6d51299e307dc510149e0b7cd1931dd11770e1cb"
+                "reference": "ca64dba53b88aba6af32aebc6b388068db95c435"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6d51299e307dc510149e0b7cd1931dd11770e1cb",
-                "reference": "6d51299e307dc510149e0b7cd1931dd11770e1cb",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ca64dba53b88aba6af32aebc6b388068db95c435",
+                "reference": "ca64dba53b88aba6af32aebc6b388068db95c435",
                 "shasum": ""
             },
             "require": {
@@ -1128,7 +1128,7 @@
                 "phpunit/php-text-template": "^1.2.1",
                 "phpunit/php-timer": "^2.0",
                 "phpunit/phpunit-mock-objects": "^6.1.1",
-                "sebastian/comparator": "^2.1 || ^3.0",
+                "sebastian/comparator": "^3.0",
                 "sebastian/diff": "^3.0",
                 "sebastian/environment": "^3.1",
                 "sebastian/exporter": "^3.1",
@@ -1176,7 +1176,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-04-18T13:41:53+00:00"
+            "time": "2018-04-29T15:09:19+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

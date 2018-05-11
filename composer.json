@@ -30,9 +30,9 @@
     "php": "^7.1",
     "drupal/drupal": "^7.59",
     "drupal/views": "^3.20",
-    "xtuple/util": "dev-master",
-    "xtuple/api": "dev-master",
-    "xtuple/api-commerce": "dev-master"
+    "xtuple/util": "dev-xtc/1.0.x",
+    "xtuple/api": "dev-xtc/1.0.x",
+    "xtuple/api-commerce": "dev-xtc/1.0.x"
   },
   "require-dev": {
     "phpunit/phpunit": "^7.0"
