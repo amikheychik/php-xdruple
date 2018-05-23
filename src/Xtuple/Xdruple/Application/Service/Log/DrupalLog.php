@@ -34,7 +34,7 @@ final class DrupalLog
         new URIStruct($referrer->path(), $referrer->options())
       );
     }
-    if ($notification = $record->notification()) {
+    foreach ($record->notifications() as $notification) {
       $this->session->notifications()->add(new NotificationStruct(
         (new NotificationTypeFromLogLevel($record->level()))->type(),
         $notification

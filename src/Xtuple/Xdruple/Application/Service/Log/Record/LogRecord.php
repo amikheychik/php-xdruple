@@ -2,6 +2,7 @@
 
 namespace Xtuple\Xdruple\Application\Service\Log\Record;
 
+use Xtuple\Util\Type\String\Message\Message\Collection\Sequence\ListMessage;
 use Xtuple\Util\Type\String\Message\Message\Message;
 use Xtuple\Xdruple\Application\Service\Log\Level\LogLevel;
 use Xtuple\Xdruple\Application\Service\Log\Record\Details\LogRecordDetails;
@@ -15,5 +16,5 @@ interface LogRecord {
 
   public function details(): ?LogRecordDetails;
 
-  public function notification(): ?Message;
+  public function notifications(): ListMessage;
 }

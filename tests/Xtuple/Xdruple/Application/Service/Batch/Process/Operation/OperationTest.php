@@ -39,7 +39,7 @@ class OperationTest
     self::assertEquals('debug', $log->level()->value());
     self::assertEquals('Completed', (string) $log->message());
     self::assertNull($log->details());
-    self::assertNull($log->notification());
+    self::assertTrue($log->notifications()->isEmpty());
     $log = $operation->failure([
       'failure' => new LogRecordStruct('xdruple.batch', LogLevel::DEBUG(), new StringMessage('Failed'), null, null),
     ], new ArrayListOperation());
@@ -47,7 +47,7 @@ class OperationTest
     self::assertEquals('debug', $log->level()->value());
     self::assertEquals('Failed', (string) $log->message());
     self::assertNull($log->details());
-    self::assertNull($log->notification());
+    self::assertTrue($log->notifications()->isEmpty());
   }
 }
 
