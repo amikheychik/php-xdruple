@@ -2,6 +2,7 @@
 
 namespace Xtuple\Xdruple\Application\Service\Log\Record;
 
+use Xtuple\Util\Type\String\Message\Message\Collection\Sequence\ListMessage;
 use Xtuple\Util\Type\String\Message\Message\Message;
 use Xtuple\Xdruple\Application\Service\Log\Level\LogLevel;
 use Xtuple\Xdruple\Application\Service\Log\Record\Details\LogRecordDetails;
@@ -31,7 +32,7 @@ abstract class AbstractLogRecord
     return $this->record->details();
   }
 
-  public final function notification(): ?Message {
-    return $this->record->notification();
+  public final function notifications(): ListMessage {
+    return $this->record->notifications();
   }
 }

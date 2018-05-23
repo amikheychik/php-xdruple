@@ -2,6 +2,8 @@
 
 namespace Xtuple\Xdruple\Application\Service\Log\Record;
 
+use Xtuple\Util\Type\String\Message\Message\Collection\Sequence\ArrayListMessage;
+use Xtuple\Util\Type\String\Message\Message\Collection\Sequence\ListMessage;
 use Xtuple\Util\Type\String\Message\Message\Message;
 use Xtuple\Xdruple\Application\Service\Log\Level\LogLevel;
 use Xtuple\Xdruple\Application\Service\Log\Record\Details\LogRecordDetails;
@@ -16,16 +18,17 @@ final class LogRecordStruct
   private $log;
   /** @var null|LogRecordDetails */
   private $details;
-  /** @var null|Message */
-  private $notification;
+  /** @var ListMessage */
+  private $notifications;
 
   public function __construct(string $type, LogLevel $level, Message $log, ?LogRecordDetails $details,
-                              ?Message $notification) {
+                              ?ListMessage $notifications) {
     $this->type = $type;
     $this->level = $level;
     $this->log = $log;
     $this->details = $details;
-    $this->notification = $notification;
+    /** @noinspection PhpUnhandledExceptionInspection - $messages is empty */
+    $this->notifications = $notifications ?: new ArrayListMessage();
   }
 
   public function type(): string {
@@ -44,7 +47,7 @@ final class LogRecordStruct
     return $this->details;
   }
 
-  public function notification(): ?Message {
-    return $this->notification;
+  public function notifications(): ListMessage {
+    return $this->notifications;
   }
 }

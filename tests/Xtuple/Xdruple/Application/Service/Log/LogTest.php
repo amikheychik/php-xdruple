@@ -21,7 +21,7 @@ class LogTest
     self::assertEquals('xdruple', $log->get(0)->type());
     self::assertTrue($log->get(0)->level()->is(LogLevel::DEBUG));
     self::assertEquals('First record', $log->get(0)->message()->__toString());
-    self::assertEquals('Notify', $log->get(0)->notification()->__toString());
+    self::assertEquals('Notify', (string) $log->get(0)->notifications()->get(0));
     $log->log(new InfoLogRecord('xdruple', new StringMessage('Second record')));
     self::assertEquals('xdruple', $log->get(1)->type());
     self::assertTrue($log->get(1)->level()->is(LogLevel::INFO));
