@@ -18,6 +18,4 @@ abstract class AbstractChainToken
   public final function type(): string {
     return $this->type;
   }
-
-  public abstract function data($data, array $context = []);
 }
