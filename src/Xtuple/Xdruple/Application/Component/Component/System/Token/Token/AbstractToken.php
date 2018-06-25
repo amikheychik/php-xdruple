@@ -2,8 +2,6 @@
 
 namespace Xtuple\Xdruple\Application\Component\Component\System\Token\Token;
 
-use Xtuple\Xdruple\Application\Service\Locale\Language\Language;
-
 abstract class AbstractToken
   implements Token {
   /** @var string */
@@ -30,7 +28,4 @@ abstract class AbstractToken
   public final function description(): string {
     return $this->description;
   }
-
-  public abstract function replace($data, array $context = [], ?Language $language = null,
-                                   bool $sanitize = true): string;
 }
