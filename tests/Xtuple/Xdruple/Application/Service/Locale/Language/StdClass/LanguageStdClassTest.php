@@ -40,7 +40,7 @@ class LanguageStdClassTest
     $language = new StdClassLanguage(
       new LanguageStruct('en', 'English', 'English', LanguageDirection::LTR(), true, 0, '', '', '', 0, '')
     );
-    self::assertTrue($language instanceof \stdClass);
+    self::assertInstanceOf(\stdClass::class, $language);
     self::assertEquals('en', $language->language);
     self::assertEquals('English', $language->name);
     self::assertEquals('English', $language->native);

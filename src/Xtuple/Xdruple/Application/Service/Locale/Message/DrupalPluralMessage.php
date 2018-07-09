@@ -35,8 +35,9 @@ final class DrupalPluralMessage
     ])));
   }
 
-  public function singular(): ?Message {
-    return new StringMessage(preg_replace('/{(\w+)}/', '!$1', strtr($this->plural->singular()->template(), [
+  public function singular(): Message {
+    $singular = $this->plural->singular();
+    return new StringMessage(preg_replace('/{(\w+)}/', '!$1', strtr($singular ? $singular->template() : '', [
       '{count}' => '@count',
     ])));
   }

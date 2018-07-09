@@ -85,6 +85,7 @@ final class TestCommonToken
 final class TestAuthorToken
   extends AbstractChainToken {
   public function __construct() {
+    /** @noinspection ClassConstantCanBeUsedInspection */
     parent::__construct('author', 'user', 'Author', 'The author of the node.');
   }
 
@@ -96,6 +97,6 @@ final class TestAuthorToken
   }
 
   public function replace($node, array $context = [], ?Language $language = null, bool $sanitize = true): string {
-    return (string) "User #{$node->uid}";
+    return "User #{$node->uid}";
   }
 }

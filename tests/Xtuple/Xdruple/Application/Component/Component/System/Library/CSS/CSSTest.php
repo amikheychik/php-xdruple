@@ -53,7 +53,4 @@ class CSSTest
 
 final class TestCSS
   extends AbstractCSS {
-  public function __construct(CSS $css) {
-    parent::__construct($css);
-  }
 }

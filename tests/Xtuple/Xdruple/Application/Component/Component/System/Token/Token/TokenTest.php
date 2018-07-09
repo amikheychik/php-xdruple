@@ -21,12 +21,13 @@ class TokenTest
   public function testChained() {
     $token = new TestChainedToken();
     self::assertEquals('author', $token->token());
+    /** @noinspection ClassConstantCanBeUsedInspection */
     self::assertEquals('Author', $token->name());
     self::assertEquals('The author of the node.', $token->description());
     self::assertEquals('user', $token->type());
     $node = (object) ['uid' => 1];
     self::assertEquals(1, $token->data($node)->uid);
-    self::assertEquals("User ID: 1", $token->replace($node));
+    self::assertEquals('User ID: 1', $token->replace($node));
   }
 }
 
@@ -44,6 +45,7 @@ final class TestToken
 final class TestChainedToken
   extends AbstractChainToken {
   public function __construct() {
+    /** @noinspection ClassConstantCanBeUsedInspection */
     parent::__construct('author', 'user', 'Author', 'The author of the node.');
   }
 

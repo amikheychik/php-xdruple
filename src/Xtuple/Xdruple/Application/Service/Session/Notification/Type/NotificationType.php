@@ -32,18 +32,18 @@ final class NotificationType
   }
 
   public function isError(): bool {
-    return $this->is(NotificationType::ERROR);
+    return $this->is(self::ERROR);
   }
 
   public function isWarning(): bool {
-    return $this->is(NotificationType::WARNING);
+    return $this->is(self::WARNING);
   }
 
   public function isStatus(): bool {
-    return $this->is(NotificationType::STATUS);
+    return $this->is(self::STATUS);
   }
 
   public function isInfo(): bool {
-    return $this->is(NotificationType::INFO);
+    return $this->is(self::INFO);
   }
 }

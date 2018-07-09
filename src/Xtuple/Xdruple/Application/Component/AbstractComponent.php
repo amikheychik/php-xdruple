@@ -53,7 +53,7 @@ abstract class AbstractComponent
   private $extensions;
 
   public final function extend(ComponentExtension $extension) {
-    if (is_null($this->extensions())) {
+    if ($this->extensions() === null) {
       throw new Exception('Component {component} extensions are not supported', [
         'component' => $extension->component(),
       ]);
@@ -71,7 +71,8 @@ abstract class AbstractComponent
   }
 
   protected final function extensions(): ?ListComponentExtension {
-    if ($this->extension && is_null($this->extensions)) {
+    if ($this->extension
+      && $this->extensions === null) {
       /** @noinspection PhpUnhandledExceptionInspection - no elements passed */
       $this->extensions = new ArrayListComponentExtension([], $this->extension);
     }

@@ -42,7 +42,7 @@ final class DrupalURL
       )
       && (
         empty($uri->options()['language'])
-        || $uri->options()['language']->language == $GLOBALS['language_url']->language
+        || $uri->options()['language']->language === $GLOBALS['language_url']->language
       )
     );
   }

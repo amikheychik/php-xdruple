@@ -18,6 +18,7 @@ final class EnvironmentXMLElement
    */
   public function __construct(XMLElement $environment, Databases $databases) {
     try {
+      /** @noinspection NullPointerExceptionInspection - verified by application.xsd */
       parent::__construct(new EnvironmentStruct(
         new EnvironmentType($environment->attributes()->get('type')->value()),
         $databases,

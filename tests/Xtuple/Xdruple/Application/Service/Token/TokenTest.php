@@ -53,7 +53,7 @@ class TokenTest
       'User [user:email] on [site:slogan]',
       $token->process(new MessageStruct('User [user:email] on [site:slogan]', [
         'user' => (object) ['uid' => 1],
-      ]), null, false)
+      ]))
     );
     self::assertEquals(
       'User  on ',
@@ -71,7 +71,7 @@ class TokenTest
       'User {user:uid} on {site:name}',
       $token->process(new MessageStruct('User {user:uid} on {site:name}', [
         'user' => (object) ['uid' => 1],
-      ]), null, false)
+      ]))
     );
     self::assertEquals(
       'Node author is username1',
@@ -85,6 +85,7 @@ class TokenTest
 final class TestAuthorToken
   extends AbstractChainToken {
   public function __construct() {
+    /** @noinspection ClassConstantCanBeUsedInspection */
     parent::__construct('author', 'user', 'Author', 'The author of the node.');
   }
 
@@ -96,7 +97,7 @@ final class TestAuthorToken
   }
 
   public function replace($node, array $context = [], ?Language $language = null, bool $sanitize = true): string {
-    return (string) "User #{$node->uid}";
+    return "User #{$node->uid}";
   }
 }
 

@@ -42,11 +42,11 @@ abstract class AbstractLocale
         /** @var NumberMessage $argument */
         $arguments[$key] = $this->number($argument, $to);
       }
-      elseif (!$argument->arguments()->isEmpty()) {
-        $arguments[$key] = $this->translate($argument, $to);
+      elseif ($argument->arguments()->isEmpty()) {
+        $arguments[$key] = $this->t((string) $argument, $to);
       }
       else {
-        $arguments[$key] = $this->t((string) $argument, $to);
+        $arguments[$key] = $this->translate($argument, $to);
       }
     }
     return $this->drupal->t($message->template(), $arguments, array_filter([

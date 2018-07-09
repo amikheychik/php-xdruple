@@ -28,7 +28,8 @@ final class DrupalLog
 
   public function log(LogRecord $record): void {
     $link = null;
-    if ($record->details() && ($referrer = $record->details()->link())) {
+    if (($details = $record->details())
+      && ($referrer = $details->link())) {
       $link = $this->url->l(
         new StringMessage($referrer->title()),
         new URIStruct($referrer->path(), $referrer->options())
@@ -40,7 +41,7 @@ final class DrupalLog
         $notification
       ));
     }
-    $record = new WatchdogLogRecord($record);
-    watchdog($record->type(), $record->message(), $record->variables(), $record->severity(), $link);
+    $watchdog = new WatchdogLogRecord($record);
+    watchdog($watchdog->type(), $watchdog->message(), $watchdog->variables(), $watchdog->severity(), $link);
   }
 }

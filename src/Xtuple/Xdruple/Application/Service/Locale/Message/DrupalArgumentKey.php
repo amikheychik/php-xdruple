@@ -17,6 +17,6 @@ final class DrupalArgumentKey {
     if (!in_array($key[0], ['!', '@', '%'])) {
       $key = "!{$key}";
     }
-    return $key;
+    return (string) $key;
   }
 }

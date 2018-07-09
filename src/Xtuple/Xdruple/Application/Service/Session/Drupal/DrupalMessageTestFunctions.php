@@ -19,7 +19,8 @@ final class DrupalMessageTestFunctions
       if (!isset($this->messages[$type])) {
         $this->messages[$type] = [];
       }
-      if ($repeat || !in_array($message, $this->messages[$type])) {
+      if ($repeat
+        || !in_array($message, $this->messages[$type], true)) {
         $this->messages[$type][] = $message;
       }
     }

@@ -3,12 +3,10 @@
 namespace Xtuple\Xdruple\Application\Service\Cache\Bin\Drupal\Key;
 
 use Xtuple\Util\Cache\Key\AbstractKey;
-use Xtuple\Util\Cache\Key\Key;
 use Xtuple\Util\Cache\Key\KeyStruct;
 
 final class KeyFromCID
-  extends AbstractKey
-  implements Key {
+  extends AbstractKey {
   /** @var string */
   private $cid;
 

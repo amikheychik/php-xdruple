@@ -12,7 +12,7 @@ class WebformComponentInfoTest
     $info = new WebformComponentInfoStruct('Test', 'Test component info', $features);
     self::assertEquals('Test', $info->label());
     self::assertEquals('Test component info', $info->description());
-    self::assertTrue($features === $info->features());
+    self::assertSame($features, $info->features());
     self::assertEquals('string', $info->conditionalType());
   }
 }

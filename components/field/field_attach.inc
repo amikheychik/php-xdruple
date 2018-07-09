@@ -112,7 +112,7 @@ function xdruple_field_attach_update($entity_type, $entity) {
  * @param string $age
  * @param array  $options
  */
-function xdruple_field_attach_load($entity_type, $entities, $age = FIELD_LOAD_CURRENT, $options = []) {
+function xdruple_field_attach_load($entity_type, $entities, $age = FIELD_LOAD_CURRENT, array $options = []) {
   _xdruple_application_field_attach_component()->fieldAttachLoad($entity_type, $entities, $age, $options);
 }
 
