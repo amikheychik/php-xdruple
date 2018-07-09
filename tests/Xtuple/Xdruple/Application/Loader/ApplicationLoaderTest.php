@@ -39,7 +39,7 @@ class ApplicationLoaderTest
         ],
       ],
     ];
-    $sourcePath = realpath(dirname(__FILE__) . '/../../../../../resource/schema');
+    $sourcePath = realpath(__DIR__ . '/../../../../../resource/schema');
     if (!file_exists("{$this->configPath}/application")) {
       mkdir("{$this->configPath}/application", 0777, true);
     }
@@ -47,8 +47,8 @@ class ApplicationLoaderTest
     copy("{$sourcePath}/environment.xml", "{$this->configPath}/application/environment.xml");
     $xml = file_get_contents("{$this->configPath}/application/application.xml");
     $xml = str_replace(
-      '\Xtuple\Xdruple\Application\Application',
-      '\Xtuple\Xdruple\Application\Loader\TestApplication',
+      Application::class,
+      TestApplication::class,
       $xml
     );
     file_put_contents("{$this->configPath}/application/application.xml", $xml);

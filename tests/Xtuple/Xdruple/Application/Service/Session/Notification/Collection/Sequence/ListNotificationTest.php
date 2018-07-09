@@ -43,7 +43,7 @@ class ListNotificationTest
     $list = new DrupalListNotification(new TestLocale('en_US'), $drupal);
     self::assertEquals(0, $list->count());
     self::assertTrue($list->isEmpty());
-    $drupal->drupalSetMessage('Test notification', 'status');
+    $drupal->drupalSetMessage('Test notification');
     $drupal->drupalSetMessage('Test error', 'error');
     $list = new DrupalListNotification(new TestLocale('en_US'), $drupal);
     self::assertEquals(2, $list->count());

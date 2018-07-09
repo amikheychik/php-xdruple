@@ -7,7 +7,7 @@ namespace Xtuple\Xdruple\Application\Service\Locale\Drupal;
  */
 final class DrupalLocaleNativeFunctions
   implements DrupalLocaleFunctions {
-  function t($string, array $args = [], array $options = []) {
+  public function t($string, array $args = [], array $options = []) {
     return t($string, $args, $options);
   }
 

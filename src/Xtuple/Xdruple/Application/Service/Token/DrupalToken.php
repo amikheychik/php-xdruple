@@ -13,7 +13,7 @@ final class DrupalToken
   implements Token {
   public function process(Message $string, ?Language $language = null, bool $clear = false,
                           bool $sanitize = true): string {
-    return token_replace($string->string(), $string->data(), array_filter([
+    return (string) token_replace($string->string(), $string->data(), array_filter([
       'language' => $language ? new StdClassLanguage($language) : null,
       'clear' => $clear,
       'sanitize' => $sanitize,

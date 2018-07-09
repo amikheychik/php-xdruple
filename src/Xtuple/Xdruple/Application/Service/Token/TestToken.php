@@ -53,6 +53,7 @@ final class TestToken
         }
         foreach ($type->chained() as $token) {
           if ($compound = $this->compound($tokens, $token->token())) {
+            /** @noinspection SlowArrayOperationsInLoopInspection */
             $replacements = array_merge($replacements, $this->replacements([
               $token->type() => $compound,
             ], [
@@ -72,7 +73,8 @@ final class TestToken
     $results = [];
     foreach ($tokens as $token => $raw) {
       $parts = explode($delimiter, $token, 2);
-      if (count($parts) == 2 && $parts[0] == $prefix) {
+      if (count($parts) === 2
+        && $parts[0] === $prefix) {
         $results[$parts[1]] = $raw;
       }
     }
@@ -88,10 +90,10 @@ final class TestToken
    */
   private function scan(string $text) {
     preg_match_all('/\[([^\s\[\]:]*):([^\[\]]*)\]/x', $text, $matches);
-    $types = $matches[1];
-    $tokens = $matches[2];
+    [,$types,$tokens] = $matches;
     $results = [];
-    for ($i = 0; $i < count($tokens); $i++) {
+    $count = count($tokens);
+    for ($i = 0; $i < $count; $i++) {
       $results[$types[$i]][$tokens[$i]] = $matches[0][$i];
     }
     return $results;

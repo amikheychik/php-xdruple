@@ -13,7 +13,7 @@ class TestCacheTest
     $cache = new TestCache();
     $cacheBin = $cache->bin('cache');
     self::assertTrue($cacheBin->isEmpty());
-    self::assertTrue($cacheBin === $cache->bin('cache'));
+    self::assertSame($cacheBin, $cache->bin('cache'));
     $serialized = serialize($cacheBin);
     self::assertEquals(
       'C:57:"Xtuple\Xdruple\Application\Service\Cache\Bin\Test\TestBin":5:{cache}',

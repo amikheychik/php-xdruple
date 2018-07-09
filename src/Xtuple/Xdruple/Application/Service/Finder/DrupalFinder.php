@@ -16,7 +16,7 @@ final class DrupalFinder
     if ($path->extension()->type()->value() === 'library') {
       return $this->library($path->extension()->name(), $path->relative());
     }
-    elseif ($file = drupal_get_filename($path->extension()->type()->value(), $path->extension()->name())) {
+    if ($file = drupal_get_filename($path->extension()->type()->value(), $path->extension()->name())) {
       $file = dirname($file);
       if ($path->relative()) {
         $file = "{$file}/{$path->relative()}";
@@ -67,9 +67,10 @@ final class DrupalFinder
     $profiles = [];
     $profile = drupal_get_profile();
     if (drupal_valid_test_ua()) {
-      $testing_profile = variable_get('simpletest_parent_profile', false);
-      if ($testing_profile && $testing_profile != $profile) {
-        $profiles[] = $testing_profile;
+      $testingProfile = variable_get('simpletest_parent_profile', false);
+      if ($testingProfile
+        && $testingProfile !== $profile) {
+        $profiles[] = $testingProfile;
       }
     }
     $profiles[] = $profile;
@@ -85,16 +86,18 @@ final class DrupalFinder
     }
     $files = [];
     foreach ($search as $dir) {
-      $files_to_add = $this->scan($dir, $mask);
-      foreach (array_intersect_key($files_to_add, $files) as $file_key => $file) {
-        if (file_exists($info_file = dirname($file->uri) . '/' . $file->name . '.info')) {
-          $info = drupal_parse_info_file($info_file);
-          if (isset($info['core']) && $info['core'] != DRUPAL_CORE_COMPATIBILITY) {
-            unset($files_to_add[$file_key]);
+      $filesToAdd = $this->scan($dir, $mask);
+      foreach (array_intersect_key($filesToAdd, $files) as $file_key => $file) {
+        if (file_exists($infoFile = dirname($file->uri) . '/' . $file->name . '.info')) {
+          $info = drupal_parse_info_file($infoFile);
+          if (isset($info['core'])
+            && $info['core'] !== DRUPAL_CORE_COMPATIBILITY) {
+            unset($filesToAdd[$file_key]);
           }
         }
       }
-      $files = array_merge($files, $files_to_add);
+      /** @noinspection SlowArrayOperationsInLoopInspection */
+      $files = array_merge($files, $filesToAdd);
     }
     return $files;
   }
@@ -102,10 +105,11 @@ final class DrupalFinder
   private function scan($dir, $mask) {
     $files = [];
     if (is_dir($dir) && $handle = opendir($dir)) {
-      while (false !== ($filename = readdir($handle))) {
-        if (!preg_match('/(\.\.?|CVS)$/', $filename) && $filename[0] != '.') {
+      while (($filename = readdir($handle)) !== false) {
+        if (!preg_match('/(\.\.?|CVS)$/', $filename) && $filename[0] !== '.') {
           $uri = file_stream_wrapper_uri_normalize("$dir/$filename");
           if (is_dir($uri)) {
+            /** @noinspection SlowArrayOperationsInLoopInspection */
             $files = array_merge($this->scan($uri, $mask), $files);
           }
           if (preg_match($mask, $filename)) {

@@ -13,8 +13,10 @@ final class TestSession
   private $notifications;
 
   public function __construct() {
+    /** @noinspection UnusedConstructorDependenciesInspection */
     $this->storage = [];
     $this->notifications = new MutableListNotification();
+    /** @noinspection UnusedConstructorDependenciesInspection */
     parent::__construct($this->storage);
   }
 

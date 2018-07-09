@@ -25,10 +25,7 @@ final class DrupalMail
         'xdruple',
         $message->key(),
         $message->to(),
-        new StdClassLanguage($message->language()
-          ? $message->language()
-          : new LanguageDefaultVariable($this->variable)
-        ),
+        new StdClassLanguage($message->language() ?: new LanguageDefaultVariable($this->variable)),
         [
           'message' => [
             'subject' => $message->subject(),

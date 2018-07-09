@@ -6,7 +6,7 @@ use Xtuple\Xdruple\Application\Service\Locale\Language\Direction\LanguageDirecti
 use Xtuple\Xdruple\Application\Service\Locale\Language\Language;
 
 final class StdClassLanguage
-  extends \StdClass
+  extends \stdClass
   implements Language {
   /** @var Language */
   private $base;

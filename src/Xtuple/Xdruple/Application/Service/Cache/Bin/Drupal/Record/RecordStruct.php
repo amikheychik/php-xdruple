@@ -37,8 +37,8 @@ final class RecordStruct
    */
   public function expired(): bool {
     return (
-      $this->expire != Cache::PERMANENT
-      && $this->expire != Cache::TEMPORARY
+      $this->expire !== Cache::PERMANENT
+      && $this->expire !== Cache::TEMPORARY
       && $this->expire <= (int) $_SERVER['REQUEST_TIME']
     );
   }

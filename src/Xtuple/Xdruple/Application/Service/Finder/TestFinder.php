@@ -35,7 +35,7 @@ final class TestFinder
           if ($file->path()->absolute() === "{$this->drupal->path()->absolute()}/{$search}") {
             return new PathStruct($search, $file->path()->absolute());
           }
-          elseif (dirname($file->path()->absolute()) === "{$this->drupal->path()->absolute()}/{$search}") {
+          if (dirname($file->path()->absolute()) === "{$this->drupal->path()->absolute()}/{$search}") {
             return new PathStruct($search, dirname($file->path()->absolute()));
           }
         }

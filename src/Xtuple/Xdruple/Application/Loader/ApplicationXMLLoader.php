@@ -22,14 +22,17 @@ final class ApplicationXMLLoader
   }
 
   public function application(): Application {
-    $applicationClass = $this->application->children('/application/load/application')->get(0)->attributes()->get('class')->value();
-    $configurationClass = $this->application->children('/application/load/configuration')->get(0)->attributes()->get('class')->value();
-    $environmentClass = $this->application->children('/application/load/environment')->get(0)->attributes()->get('class')->value();
-    return new $applicationClass(
-      new $configurationClass(
+    /** @noinspection NullPointerExceptionInspection - verified by application.xsd */
+    $application = $this->application->children('/application/load/application')->get(0)->attributes()->get('class')->value();
+    /** @noinspection NullPointerExceptionInspection - verified by application.xsd */
+    $configuration = $this->application->children('/application/load/configuration')->get(0)->attributes()->get('class')->value();
+    /** @noinspection NullPointerExceptionInspection - verified by application.xsd */
+    $environment = $this->application->children('/application/load/environment')->get(0)->attributes()->get('class')->value();
+    return new $application(
+      new $configuration(
         $this->application
       ),
-      new $environmentClass(
+      new $environment(
         $this->environment,
         $this->databases
       )

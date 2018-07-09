@@ -15,7 +15,7 @@ class RecordTest
     $data = (object) ['user' => 1];
     $record = new RecordStruct(new KeyStruct(['field', 'node', 1]), $data);
     self::assertEquals('field:node:1', (string) $record->key());
-    self::assertTrue($record->key() instanceof Key);
+    self::assertInstanceOf(Key::class, $record->key());
     self::assertEquals($data, $record->value());
     self::assertEquals(0, $record->expire());
     self::assertFalse($record->expired());
@@ -44,7 +44,7 @@ class RecordTest
       $data
     ));
     self::assertEquals('field:node:1', (string) $record->key());
-    self::assertTrue($record->key() instanceof Key);
+    self::assertInstanceOf(Key::class, $record->key());
     self::assertEquals($data, $record->value());
     self::assertEquals(0, $record->expire());
     self::assertFalse($record->expired());

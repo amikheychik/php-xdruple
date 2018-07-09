@@ -28,6 +28,7 @@ final class DrupalListNotification
   private function index(): ListNotification {
     $index = [];
     foreach ($this->drupal->drupalGetMessage(null, false) as $type => $messages) {
+      /** @var string[] $messages */
       foreach ($messages as $message) {
         try {
           $index[] = new NotificationStruct(
@@ -70,8 +71,7 @@ final class DrupalListNotification
   public function append(Notification $notification): ListNotification {
     $this->drupal->drupalSetMessage(
       $this->locale->translate($notification->message()),
-      $notification->type()->value(),
-      true
+      $notification->type()->value()
     );
     return $this->index();
   }

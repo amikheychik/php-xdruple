@@ -5,6 +5,7 @@ namespace Xtuple\Xdruple\Application\Service\Log\Watchdog;
 use Xtuple\Xdruple\Application\Service\Log\Level\LogLevel;
 
 final class WatchdogFromLevel {
+  /** @var int[] */
   private const SEVERITIES = [
     LogLevel::ALERT => Watchdog::ALERT,
     LogLevel::CRITICAL => Watchdog::CRITICAL,

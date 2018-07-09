@@ -14,7 +14,7 @@ interface FormComponent
    *
    * @return array
    */
-  public function forms($formId, $args = []);
+  public function forms($formId, array $args = []);
 
   /**
    * @param array $form

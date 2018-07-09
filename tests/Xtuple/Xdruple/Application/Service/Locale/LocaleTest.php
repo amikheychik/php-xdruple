@@ -53,17 +53,17 @@ class LocaleTest
     self::assertEquals('тест', $this->locale->translate(new StringMessage('test'), $this->language()));
     self::assertEquals('Pi number is approximately 3.142', $this->locale->translate(
       new MessageStruct('Pi number is approximately %pi', new ArrayMapArgument([
-        new FloatArgument('%pi', pi()),
+        new FloatArgument('%pi', M_PI),
       ]))
     ));
     self::assertEquals('Pi number is approximately 3.1416', $this->locale->translate(
       new MessageStruct('Pi number is approximately %pi', new ArrayMapArgument([
-        new FloatArgument('%pi', pi(), '#.0000'),
+        new FloatArgument('%pi', M_PI, '#.0000'),
       ]))
     ));
     self::assertEquals('Число Пи приблизительно равно 3,14159', $this->locale->translate(
       new MessageStruct('Pi number is approximately %pi', new ArrayMapArgument([
-        new FloatArgument('%pi', pi(), '#.0000#'),
+        new FloatArgument('%pi', M_PI, '#.0000#'),
       ])),
       $this->language()
     ));
@@ -134,8 +134,8 @@ class LocaleTest
   }
 
   public function testNumber() {
-    self::assertEquals('3,141.593', $this->locale->number(new FloatMessage(pi() * 1000)));
-    self::assertEquals('3 141,593', $this->locale->number(new FloatMessage(pi() * 1000), $this->language())); // 3&nbsp;141
+    self::assertEquals('3,141.593', $this->locale->number(new FloatMessage(M_PI * 1000)));
+    self::assertEquals('3 141,593', $this->locale->number(new FloatMessage(M_PI * 1000), $this->language())); // 3&nbsp;141
   }
 
   private function language(): Language {

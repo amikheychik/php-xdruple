@@ -8,6 +8,7 @@ use Xtuple\Xdruple\Application\Component\Component\Entity\Type\Taxonomy\Taxonomy
 function taxonomy_forms() {
   $forms = [];
   if ($vocabularies = taxonomy_get_vocabularies()) {
+    /** @var \stdClass[] $vocabularies */
     foreach ($vocabularies as $vocabulary) {
       $forms["taxonomy_form_term_{$vocabulary->machine_name}"]['callback'] = 'taxonomy_form_term';
     }

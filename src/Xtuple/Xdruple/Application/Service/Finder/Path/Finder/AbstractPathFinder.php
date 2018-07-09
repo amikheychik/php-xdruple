@@ -27,7 +27,7 @@ abstract class AbstractPathFinder
   }
 
   /** @var null|Path */
-  private $found = null;
+  private $found;
 
   private function path(): Path {
     if ($this->found === null) {

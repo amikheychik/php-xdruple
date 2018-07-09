@@ -97,6 +97,6 @@ final class DrupalBin
    * @return bool
    */
   public function isEmpty(): bool {
-    return cache_is_empty($this->name);
+    return (bool) cache_is_empty($this->name);
   }
 }

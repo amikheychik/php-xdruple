@@ -50,7 +50,7 @@ function _webform_render_component_name($component, $value = null, $filter = tru
  *
  * @return array
  */
-function _webform_display_component_name($component, $value, $format = 'html', $submission = []) {
+function _webform_display_component_name($component, $value, $format = 'html', array $submission = []) {
   return _xdruple_application_webform_component('component_name')->display($component, $value, $format, $submission);
 }
 
@@ -118,7 +118,7 @@ function _webform_theme_component_name() {
  *
  * @return array
  */
-function _webform_analysis_component_name($component, $sids = [], $single = false, $join = null) {
+function _webform_analysis_component_name($component, array $sids = [], $single = false, $join = null) {
   return _xdruple_application_webform_component('component_name')->analysis($component, $sids, $single, $join);
 }
 

@@ -22,7 +22,7 @@ class DrupalMessageFunctionsTest
     $functions->drupalSetMessage('Test', 'error');
     $functions->drupalSetMessage('Test', 'error');
     self::assertCount(2, $functions->drupalGetMessage('error', false)['error']);
-    self::assertCount(2, $functions->drupalGetMessage(null, true)['error']);
+    self::assertCount(2, $functions->drupalGetMessage()['error']);
     self::assertEmpty($functions->drupalGetMessage());
   }
 }
