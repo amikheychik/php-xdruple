@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "851382cf1748cf1d302c802ded0b3150",
+    "content-hash": "c124cc70fbf2d931bad7cf9f0eee88ba",
     "packages": [
         {
             "name": "drupal/ctools",
@@ -308,12 +308,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtuple/php-api.git",
-                "reference": "670fcef8a407cc95c76f892230fa64c72bb7870d"
+                "reference": "ca3f486745d4bac7a94eff6feea45539c90f4a9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtuple/php-api/zipball/670fcef8a407cc95c76f892230fa64c72bb7870d",
-                "reference": "670fcef8a407cc95c76f892230fa64c72bb7870d",
+                "url": "https://api.github.com/repos/xtuple/php-api/zipball/ca3f486745d4bac7a94eff6feea45539c90f4a9a",
+                "reference": "ca3f486745d4bac7a94eff6feea45539c90f4a9a",
                 "shasum": ""
             },
             "require": {
@@ -321,7 +321,7 @@
                 "xtuple/util": "dev-master"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7.0"
+                "phpunit/phpunit": "^7.2"
             },
             "type": "library",
             "autoload": {
@@ -342,7 +342,7 @@
             ],
             "description": "xTuple REST API PHP client",
             "homepage": "https://github.com/xtuple/php-api",
-            "time": "2018-05-11T14:33:32+00:00"
+            "time": "2018-07-12T16:09:32+00:00"
         },
         {
             "name": "xtuple/api-commerce",
@@ -350,12 +350,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtuple/php-api-commerce.git",
-                "reference": "35354248b107e42de86d8756588e06cc061bac48"
+                "reference": "e1a60856b6feafc1cce5e15f615d468bee009134"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtuple/php-api-commerce/zipball/35354248b107e42de86d8756588e06cc061bac48",
-                "reference": "35354248b107e42de86d8756588e06cc061bac48",
+                "url": "https://api.github.com/repos/xtuple/php-api-commerce/zipball/e1a60856b6feafc1cce5e15f615d468bee009134",
+                "reference": "e1a60856b6feafc1cce5e15f615d468bee009134",
                 "shasum": ""
             },
             "require": {
@@ -364,7 +364,7 @@
                 "xtuple/util": "dev-master"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7.0"
+                "phpunit/phpunit": "^7.2"
             },
             "type": "library",
             "autoload": {
@@ -385,7 +385,7 @@
             ],
             "description": "xTuple Commerce API client",
             "homepage": "https://github.com/xtuple/php-api-commerce",
-            "time": "2018-05-11T14:48:17+00:00"
+            "time": "2018-07-12T16:14:41+00:00"
         },
         {
             "name": "xtuple/util",
@@ -393,12 +393,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtuple/php-util.git",
-                "reference": "a21c690dff358bba7670b120585c6492eed4d650"
+                "reference": "c5300bbf3002d89811f05d9d2011ba8fc5b1a5e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtuple/php-util/zipball/a21c690dff358bba7670b120585c6492eed4d650",
-                "reference": "a21c690dff358bba7670b120585c6492eed4d650",
+                "url": "https://api.github.com/repos/xtuple/php-util/zipball/c5300bbf3002d89811f05d9d2011ba8fc5b1a5e8",
+                "reference": "c5300bbf3002d89811f05d9d2011ba8fc5b1a5e8",
                 "shasum": ""
             },
             "require": {
@@ -408,7 +408,7 @@
                 "php": "^7.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7.0"
+                "phpunit/phpunit": "^7.2"
             },
             "type": "library",
             "autoload": {
@@ -429,7 +429,7 @@
             ],
             "description": "xTuple PHP utility classes",
             "homepage": "https://github.com/xtuple/php-util",
-            "time": "2018-07-09T14:59:06+00:00"
+            "time": "2018-07-12T16:00:54+00:00"
         }
     ],
     "packages-dev": [
@@ -1232,16 +1232,16 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "3.0.1",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "591a30922f54656695e59b1f39501aec513403da"
+                "reference": "5de4fc177adf9bce8df98d8d141a7559d7ccf6da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/591a30922f54656695e59b1f39501aec513403da",
-                "reference": "591a30922f54656695e59b1f39501aec513403da",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/5de4fc177adf9bce8df98d8d141a7559d7ccf6da",
+                "reference": "5de4fc177adf9bce8df98d8d141a7559d7ccf6da",
                 "shasum": ""
             },
             "require": {
@@ -1292,7 +1292,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2018-06-14T15:05:28+00:00"
+            "time": "2018-07-12T15:12:46+00:00"
         },
         {
             "name": "sebastian/diff",
