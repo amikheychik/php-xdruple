@@ -90,7 +90,7 @@ final class TestToken
    */
   private function scan(string $text) {
     preg_match_all('/\[([^\s\[\]:]*):([^\[\]]*)\]/x', $text, $matches);
-    [,$types,$tokens] = $matches;
+    [, $types, $tokens] = $matches;
     $results = [];
     $count = count($tokens);
     for ($i = 0; $i < $count; $i++) {
