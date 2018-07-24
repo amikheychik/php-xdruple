@@ -6,6 +6,7 @@ use PHPUnit\Framework\TestCase;
 use Xtuple\Util\Type\String\Message\Argument\ArgumentStruct;
 use Xtuple\Util\Type\String\Message\Argument\Collection\Map\ArrayMapArgument;
 use Xtuple\Util\Type\String\Message\Message\MessageStruct;
+use Xtuple\Util\Type\String\Message\Type\Number\Currency\CurrencyMessageStruct;
 use Xtuple\Util\Type\String\Message\Type\Number\Float\FloatArgument;
 use Xtuple\Util\Type\String\Message\Type\Number\Float\FloatMessage;
 use Xtuple\Util\Type\String\Message\Type\Number\Integer\IntegerArgument;
@@ -13,6 +14,7 @@ use Xtuple\Util\Type\String\Message\Type\Plural\PluralArgumentFromStrings;
 use Xtuple\Util\Type\String\Message\Type\Plural\PluralMessageFromStrings;
 use Xtuple\Util\Type\String\Message\Type\String\StringArgument;
 use Xtuple\Util\Type\String\Message\Type\String\StringMessage;
+use Xtuple\Xdruple\Application\Service\Locale\Currency\Precision\CurrencyPrecisionStruct;
 use Xtuple\Xdruple\Application\Service\Locale\Language\Direction\LanguageDirection;
 use Xtuple\Xdruple\Application\Service\Locale\Language\Language;
 use Xtuple\Xdruple\Application\Service\Locale\Language\LanguageStruct;
@@ -136,6 +138,14 @@ class LocaleTest
   public function testNumber() {
     self::assertEquals('3,141.593', $this->locale->number(new FloatMessage(M_PI * 1000)));
     self::assertEquals('3 141,593', $this->locale->number(new FloatMessage(M_PI * 1000), $this->language())); // 3&nbsp;141
+  }
+
+  public function testCurrency() {
+    self::assertEquals('RUB3.14', $this->locale->number(new CurrencyMessageStruct(3.1415, 'RUB')));
+    $locale = new TestLocale('en_US', [], new CurrencyPrecisionStruct(4));
+    self::assertEquals('RUB3.1415', $locale->number(new CurrencyMessageStruct(3.1415, 'RUB')));
+    $locale = new TestLocale('ru_RU', [], new CurrencyPrecisionStruct(4));
+    self::assertEquals('3,1415 руб.', $locale->number(new CurrencyMessageStruct(3.1415, 'RUB')));
   }
 
   private function language(): Language {
