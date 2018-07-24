@@ -3,8 +3,11 @@
 namespace Xtuple\Xdruple\Application\Service\Locale;
 
 use Xtuple\Util\Type\String\Message\Message\Message;
+use Xtuple\Util\Type\String\Message\Type\Number\Currency\CurrencyMessage;
+use Xtuple\Util\Type\String\Message\Type\Number\Currency\CurrencyMessageWithPrecision;
 use Xtuple\Util\Type\String\Message\Type\Number\NumberMessage;
 use Xtuple\Util\Type\String\Message\Type\Plural\PluralMessage;
+use Xtuple\Xdruple\Application\Service\Locale\Currency\Precision\CurrencyPrecision;
 use Xtuple\Xdruple\Application\Service\Locale\Drupal\DrupalLocaleFunctions;
 use Xtuple\Xdruple\Application\Service\Locale\Language\Language;
 use Xtuple\Xdruple\Application\Service\Locale\Message\DrupalArgumentKey;
@@ -17,10 +20,13 @@ abstract class AbstractLocale
   private $locale;
   /** @var DrupalLocaleFunctions */
   private $drupal;
+  /** @var CurrencyPrecision */
+  private $precision;
 
-  public function __construct(DrupalLocaleFunctions $drupal, string $locale) {
+  public function __construct(DrupalLocaleFunctions $drupal, string $locale, CurrencyPrecision $precision) {
     $this->drupal = $drupal;
     $this->locale = $locale;
+    $this->precision = $precision;
   }
 
   public final function t(string $string, ?Language $to = null): string {
@@ -73,6 +79,18 @@ abstract class AbstractLocale
   }
 
   public final function number(NumberMessage $number, ?Language $to = null): string {
-    return $number->format($to ? \Locale::canonicalize($to->language()) : $this->locale);
+    $locale = $to
+      ? \Locale::canonicalize($to->language())
+      : $this->locale;
+    if ($number instanceof CurrencyMessage
+      && $this->precision->precision()) {
+      /** @var CurrencyMessage $number */
+      return (new CurrencyMessageWithPrecision(
+        $number->amount(),
+        $number->currency(),
+        $this->precision->precision()
+      ))->format($locale);
+    }
+    return $number->format($locale);
   }
 }

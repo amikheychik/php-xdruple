@@ -2,6 +2,8 @@
 
 namespace Xtuple\Xdruple\Application\Service\Locale;
 
+use Xtuple\Xdruple\Application\Service\Locale\Currency\Precision\CurrencyPrecision;
+use Xtuple\Xdruple\Application\Service\Locale\Currency\Precision\CurrencyPrecisionStruct;
 use Xtuple\Xdruple\Application\Service\Locale\Drupal\DrupalLocaleTestFunctions;
 
 /**
@@ -9,7 +11,12 @@ use Xtuple\Xdruple\Application\Service\Locale\Drupal\DrupalLocaleTestFunctions;
  */
 final class TestLocale
   extends AbstractLocale {
-  public function __construct(string $locale = 'en_US', array $translations = []) {
-    parent::__construct(new DrupalLocaleTestFunctions($translations), $locale);
+  public function __construct(string $locale = 'en_US', array $translations = [],
+                              ?CurrencyPrecision $precision = null) {
+    parent::__construct(
+      new DrupalLocaleTestFunctions($translations),
+      $locale,
+      $precision ?: new CurrencyPrecisionStruct(null)
+    );
   }
 }

@@ -2,6 +2,7 @@
 
 namespace Xtuple\Xdruple\Application\Service\Locale;
 
+use Xtuple\Xdruple\Application\Service\Locale\Currency\Precision\CurrencyPrecision;
 use Xtuple\Xdruple\Application\Service\Locale\Drupal\DrupalLocaleNativeFunctions;
 
 /**
@@ -9,7 +10,8 @@ use Xtuple\Xdruple\Application\Service\Locale\Drupal\DrupalLocaleNativeFunctions
  */
 final class DrupalLocale
   extends AbstractLocale {
-  public function __construct(string $locale) {
-    parent::__construct(new DrupalLocaleNativeFunctions(), $locale);
+  public function __construct(string $locale, CurrencyPrecision $precision) {
+    parent::__construct(
+      new DrupalLocaleNativeFunctions(), $locale, $precision);
   }
 }
