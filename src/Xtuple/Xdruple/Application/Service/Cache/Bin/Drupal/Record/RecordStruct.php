@@ -5,7 +5,7 @@ namespace Xtuple\Xdruple\Application\Service\Cache\Bin\Drupal\Record;
 use Xtuple\Util\Cache\Key\Key;
 use Xtuple\Util\Cache\Record\AbstractRecord;
 use Xtuple\Util\Cache\Record\RecordStruct as CacheRecordStruct;
-use Xtuple\Util\Type\DateTime\DateTimeTimestamp;
+use Xtuple\Util\Type\DateTime\DateTimeTimestampSeconds;
 use Xtuple\Xdruple\Application\Service\Cache\Bin\Drupal\Key\KeyFromKey;
 use Xtuple\Xdruple\Application\Service\Cache\Lifetime\Cache;
 
@@ -17,7 +17,7 @@ final class RecordStruct
 
   public function __construct(Key $key, $data, int $expire = Cache::PERMANENT) {
     /** @noinspection PhpUnhandledExceptionInspection - argument checked to be positive */
-    $expiresAt = $expire > 0 ? new DateTimeTimestamp($expire) : null;
+    $expiresAt = $expire > 0 ? new DateTimeTimestampSeconds($expire) : null;
     parent::__construct(new CacheRecordStruct(
       new KeyFromKey($key),
       $data,
