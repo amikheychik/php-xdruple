@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d6186a096a2222b0b59b5fa0a62435df",
+    "content-hash": "62e37c56190fbe748bba3d0c1c7db94f",
     "packages": [
         {
             "name": "drupal/ctools",
@@ -2013,7 +2013,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.1"
+        "php": "^7.1",
+        "ext-intl": "*"
     },
     "platform-dev": []
 }
