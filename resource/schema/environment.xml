@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <environment type="development"
-             xmlns="https://xdruple.xtuple.com/schema/environment"
+             xmlns="https://xtuple.com/schema/php-xdruple.environment"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="https://xdruple.xtuple.com/schema/environment environment.xsd">
+             xsi:schemaLocation="https://xtuple.com/schema/php-xdruple.environment environment.xsd">
 </environment>

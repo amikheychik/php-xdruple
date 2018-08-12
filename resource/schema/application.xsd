@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<xs:schema targetNamespace="https://xdruple.xtuple.com/schema/application"
-           xmlns="https://xdruple.xtuple.com/schema/application"
+<xs:schema targetNamespace="https://xtuple.com/schema/php-xdruple.application"
+           xmlns="https://xtuple.com/schema/php-xdruple.application"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            elementFormDefault="qualified">
   <xs:complexType name="class">
