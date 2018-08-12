@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<application xmlns="https://xdruple.xtuple.com/schema/application"
+<application xmlns="https://xtuple.com/schema/php-xdruple.application"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="https://xdruple.xtuple.com/schema/application application.xsd">
+             xsi:schemaLocation="https://xtuple.com/schema/php-xdruple.application application.xsd">
   <load>
     <application class="\Xtuple\Xdruple\Application\Application"/>
     <configuration class="\Xtuple\Xdruple\Application\Configuration\Application\ApplicationXMLElement"/>

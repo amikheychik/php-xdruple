@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<xs:schema targetNamespace="https://xdruple.xtuple.com/schema/environment"
-           xmlns="https://xdruple.xtuple.com/schema/environment"
-           xmlns:application="https://xdruple.xtuple.com/schema/application"
+<xs:schema targetNamespace="https://xtuple.com/schema/php-xdruple.environment"
+           xmlns="https://xtuple.com/schema/php-xdruple.environment"
+           xmlns:application="https://xtuple.com/schema/php-xdruple.application"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xsi:schemaLocation="https://xdruple.xtuple.com/schema/application application.xsd"
+           xsi:schemaLocation="https://xtuple.com/schema/php-xdruple.application application.xsd"
            elementFormDefault="qualified">
   <xs:complexType name="environment">
     <xs:choice>
