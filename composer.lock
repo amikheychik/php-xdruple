@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "77ece65fd618cacd2df6bc903ce1d9d0",
+    "content-hash": "987e1f68f90adf3d3995bbaccc2ccab2",
     "packages": [
         {
             "name": "drupal/ctools",
@@ -303,102 +303,17 @@
             }
         },
         {
-            "name": "xtuple/api",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/xtuple/php-api.git",
-                "reference": "c3bc04ef983982190f6a8736b288039c648ae7fe"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/xtuple/php-api/zipball/c3bc04ef983982190f6a8736b288039c648ae7fe",
-                "reference": "c3bc04ef983982190f6a8736b288039c648ae7fe",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1",
-                "xtuple/util": "dev-master"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^7.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Xtuple\\API\\Client\\": "src/Xtuple/API/Client/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "CPAL-1.0"
-            ],
-            "authors": [
-                {
-                    "name": "Andrey Mikheychik",
-                    "email": "andrey@xtuple.com",
-                    "role": "Software Engineer"
-                }
-            ],
-            "description": "xTuple REST API PHP client",
-            "homepage": "https://github.com/xtuple/php-api",
-            "time": "2018-08-08T14:49:44+00:00"
-        },
-        {
-            "name": "xtuple/api-commerce",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/xtuple/php-api-commerce.git",
-                "reference": "4d11f03a6b1994004d398693e4e379202715d365"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/xtuple/php-api-commerce/zipball/4d11f03a6b1994004d398693e4e379202715d365",
-                "reference": "4d11f03a6b1994004d398693e4e379202715d365",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1",
-                "xtuple/api": "dev-master",
-                "xtuple/util": "dev-master"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^7.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Xtuple\\Commerce\\": "src/Xtuple/Commerce/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "CPAL-1.0"
-            ],
-            "authors": [
-                {
-                    "name": "Andrey Mikheychik",
-                    "email": "andrey@xtuple.com",
-                    "role": "Software Engineer"
-                }
-            ],
-            "description": "xTuple Commerce API client",
-            "homepage": "https://github.com/xtuple/php-api-commerce",
-            "time": "2018-08-08T14:53:51+00:00"
-        },
-        {
             "name": "xtuple/util",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtuple/php-util.git",
-                "reference": "11e22290cae41f9f0625ed81b93e533b6bab3710"
+                "reference": "8ef855b3ded1f9d02bbd2860c691dc84c81e4c56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtuple/php-util/zipball/11e22290cae41f9f0625ed81b93e533b6bab3710",
-                "reference": "11e22290cae41f9f0625ed81b93e533b6bab3710",
+                "url": "https://api.github.com/repos/xtuple/php-util/zipball/8ef855b3ded1f9d02bbd2860c691dc84c81e4c56",
+                "reference": "8ef855b3ded1f9d02bbd2860c691dc84c81e4c56",
                 "shasum": ""
             },
             "require": {
@@ -406,6 +321,7 @@
                 "ext-intl": "*",
                 "ext-json": "*",
                 "ext-openssl": "*",
+                "ext-pdo": "*",
                 "ext-simplexml": "*",
                 "ext-soap": "*",
                 "php": "^7.1"
@@ -432,7 +348,7 @@
             ],
             "description": "xTuple PHP utility classes",
             "homepage": "https://github.com/xtuple/php-util",
-            "time": "2018-08-08T14:44:05+00:00"
+            "time": "2018-08-15T17:48:33+00:00"
         }
     ],
     "packages-dev": [
@@ -1231,11 +1147,12 @@
                 "gregwar/rst": "<1.0.3",
                 "guzzlehttp/guzzle": ">=6,<6.2.1|>=4.0.0-rc2,<4.2.4|>=5,<5.3.1",
                 "illuminate/auth": ">=4,<4.0.99|>=4.1,<=4.1.31|>=4.2,<=4.2.22|>=5,<=5.0.35|>=5.1,<=5.1.46|>=5.2,<=5.2.45|>=5.3,<=5.3.31|>=5.4,<=5.4.36|>=5.5,<5.5.10",
+                "illuminate/cookie": ">=4,<=4.0.11|>=4.1,<=4.1.31|>=4.2,<=4.2.22|>=5,<=5.0.35|>=5.1,<=5.1.46|>=5.2,<=5.2.45|>=5.3,<=5.3.31|>=5.4,<=5.4.36|>=5.5,<5.5.42|>=5.6,<5.6.30",
                 "illuminate/database": ">=4,<4.0.99|>=4.1,<4.1.29",
                 "illuminate/encryption": ">=4,<=4.0.11|>=4.1,<=4.1.31|>=4.2,<=4.2.22|>=5,<=5.0.35|>=5.1,<=5.1.46|>=5.2,<=5.2.45|>=5.3,<=5.3.31|>=5.4,<=5.4.36|>=5.5,<5.5.40|>=5.6,<5.6.15",
                 "joomla/session": "<1.3.1",
                 "kreait/firebase-php": ">=3.2,<3.8.1",
-                "laravel/framework": ">=4,<4.0.99|>=4.1,<=4.1.31|>=4.2,<=4.2.22|>=5,<=5.0.35|>=5.1,<=5.1.46|>=5.2,<=5.2.45|>=5.3,<=5.3.31|>=5.4,<=5.4.36|>=5.5,<5.5.40|>=5.6,<5.6.15",
+                "laravel/framework": ">=4,<4.0.99|>=4.1,<=4.1.31|>=4.2,<=4.2.22|>=5,<=5.0.35|>=5.1,<=5.1.46|>=5.2,<=5.2.45|>=5.3,<=5.3.31|>=5.4,<=5.4.36|>=5.5,<5.5.42|>=5.6,<5.6.30",
                 "laravel/socialite": ">=1,<1.0.99|>=2,<2.0.10",
                 "magento/magento1ce": "<1.9.3.9",
                 "magento/magento1ee": ">=1.9,<1.14.3.2",
@@ -1292,7 +1209,7 @@
                 "symfony/web-profiler-bundle": ">=2,<2.3.19|>=2.4,<2.4.9|>=2.5,<2.5.4",
                 "symfony/yaml": ">=2,<2.0.22|>=2.1,<2.1.7",
                 "thelia/backoffice-default-template": ">=2.1,<2.1.2",
-                "thelia/thelia": ">=2.1.0-beta1,<2.1.3|>=2.1,<2.1.2",
+                "thelia/thelia": ">=2.1,<2.1.2|>=2.1.0-beta1,<2.1.3",
                 "titon/framework": ">=0,<9.9.99",
                 "twig/twig": "<1.20",
                 "typo3/cms": ">=6.2,<6.2.30|>=7,<7.6.30|>=8,<8.7.17|>=9,<9.3.2",
@@ -1324,7 +1241,7 @@
                 "zendframework/zend-validator": ">=2.3,<2.3.6",
                 "zendframework/zend-view": ">=2,<2.2.7|>=2.3,<2.3.1",
                 "zendframework/zend-xmlrpc": ">=2.1,<2.1.6|>=2.2,<2.2.6",
-                "zendframework/zendframework": ">=2,<2.4.11|>=2.5,<2.5.1",
+                "zendframework/zendframework": "<2.5.1",
                 "zendframework/zendframework1": "<1.12.20",
                 "zendframework/zendopenid": ">=2,<2.0.2",
                 "zendframework/zendxml": ">=1,<1.0.1",
@@ -1346,7 +1263,7 @@
                 }
             ],
             "description": "Prevents installation of composer packages with known security vulnerabilities: no API, simply require it",
-            "time": "2018-08-07T14:47:17+00:00"
+            "time": "2018-08-14T15:39:17+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -2006,8 +1923,6 @@
     "minimum-stability": "alpha",
     "stability-flags": {
         "xtuple/util": 20,
-        "xtuple/api": 20,
-        "xtuple/api-commerce": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,
