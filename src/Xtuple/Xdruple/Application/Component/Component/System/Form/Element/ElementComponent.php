@@ -18,7 +18,7 @@ interface ElementComponent
   /**
    * @see hook_element_info_alter()
    *
-   * @param $types
+   * @param array $types
    */
   public function elementInfoAlter(&$types);
 

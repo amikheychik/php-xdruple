@@ -22,9 +22,9 @@ interface BatchComponent {
   /**
    * @see callback_batch_finished().
    *
-   * @param $success
-   * @param $results
-   * @param $operations
+   * @param       $success
+   * @param       $results
+   * @param array $operations
    */
   public function batchFinished($success, $results, $operations);
 }
