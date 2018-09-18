@@ -18,7 +18,7 @@ interface EntityComponent
   /**
    * @see hook_entity_info_alter().
    *
-   * @param $entityInfo
+   * @param array $entityInfo
    */
   public function entityInfoAlter(&$entityInfo);
 }

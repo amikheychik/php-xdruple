@@ -29,13 +29,13 @@ interface FieldFormatterComponent
   /**
    * @see hook_field_formatter_prepare_view().
    *
-   * @param $entityType
-   * @param $entities
-   * @param $field
-   * @param $instances
-   * @param $langcode
-   * @param $items
-   * @param $displays
+   * @param       $entityType
+   * @param array $entities
+   * @param       $field
+   * @param       $instances
+   * @param       $langcode
+   * @param       $items
+   * @param       $displays
    */
   public function fieldFormatterPrepareView($entityType, $entities, $field, $instances, $langcode, &$items, $displays);
 
