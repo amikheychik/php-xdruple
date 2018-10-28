@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14fc905cfcb291b0d063c66140514fcb",
+    "content-hash": "f0d3dea843eb0f0ff0f622f127b6f349",
     "packages": [
         {
             "name": "drupal/ctools",
@@ -300,12 +300,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/xtuple/php-util.git",
-                "reference": "cf344e38ada55d93e68b8fb08936624dc6543c79"
+                "reference": "9398644f0af2057ce812fc121a36790d3884dd97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/xtuple/php-util/zipball/cf344e38ada55d93e68b8fb08936624dc6543c79",
-                "reference": "cf344e38ada55d93e68b8fb08936624dc6543c79",
+                "url": "https://api.github.com/repos/xtuple/php-util/zipball/9398644f0af2057ce812fc121a36790d3884dd97",
+                "reference": "9398644f0af2057ce812fc121a36790d3884dd97",
                 "shasum": ""
             },
             "require": {
@@ -319,7 +319,7 @@
                 "php": "^7.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7.3"
+                "phpunit/phpunit": "^7.4"
             },
             "type": "library",
             "autoload": {
@@ -340,7 +340,7 @@
             ],
             "description": "xTuple PHP utility classes",
             "homepage": "https://github.com/xtuple/php-util",
-            "time": "2018-10-21T14:47:25+00:00"
+            "time": "2018-10-28T12:31:00+00:00"
         }
     ],
     "packages-dev": [
