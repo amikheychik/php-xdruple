@@ -24,7 +24,7 @@ interface WebformComponent {
    */
   public function render(array $component, ?array $value = null, bool $filter = true, $submission = null): array;
 
-  public function display(array $component, array $value, string $format = 'html', ?stdClass $submission = null): array;
+  public function display(array $component, array $value, string $format = 'html', array $submission = []): array;
 
   public function actionSet(array $component, array &$element, array &$formState, string $value);
 

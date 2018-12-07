@@ -3,7 +3,6 @@
 namespace Xtuple\Xdruple\Application\Component\Component\Webform\Component\Component;
 
 use PHPUnit\Framework\TestCase;
-use stdClass;
 use Xtuple\Xdruple\Application\Component\Component\Webform\Component\Component\Info\Features\WebformComponentFeaturesStruct;
 use Xtuple\Xdruple\Application\Component\Component\Webform\Component\Component\Info\WebformComponentInfoStruct;
 
@@ -32,7 +31,7 @@ final class TestWebformComponent
   }
 
   public function display(array $component, array $value, string $format = 'html',
-                          ?stdClass $submission = null): array {
+                          array $submission = []): array {
     return [];
   }
 
