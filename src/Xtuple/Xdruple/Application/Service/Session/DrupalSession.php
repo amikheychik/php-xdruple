@@ -8,9 +8,7 @@ use Xtuple\Xdruple\Application\Service\Session\Notification\Collection\Sequence\
 use Xtuple\Xdruple\Application\Service\Session\Notification\Collection\Sequence\ListNotification;
 
 final class DrupalSession
-  extends AbstractArraySession {
-  /** @var array */
-  private $session;
+  implements Session {
   /** @var DrupalListNotification */
   private $notifications;
 
@@ -19,11 +17,33 @@ final class DrupalSession
       // Check is required as $_SESSION doesn't exist for Anonymous user
       $_SESSION = [];
     }
-    /** @noinspection UnusedConstructorDependenciesInspection */
-    $this->session = &$_SESSION;
-    /** @noinspection UnusedConstructorDependenciesInspection */
-    parent::__construct($this->session);
     $this->notifications = new DrupalListNotification($locale, $drupal);
+  }
+
+  public function has(string $property): bool {
+    return (
+      isset($_SESSION[$property])
+      || array_key_exists($property, $_SESSION)
+    );
+  }
+
+  public function get(string $property, $default = null) {
+    if ($this->has($property)) {
+      return $_SESSION[$property];
+    }
+    return $default;
+  }
+
+  public function set(string $property, $value) {
+    $previous = $this->get($property);
+    $_SESSION[$property] = $value;
+    return $previous;
+  }
+
+  public function remove(string $property) {
+    $previous = $this->get($property);
+    unset($_SESSION[$property]);
+    return $previous;
   }
 
   public function notifications(): ListNotification {
